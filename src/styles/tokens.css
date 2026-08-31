@@ -1,0 +1,82 @@
+/* ==========================================================================
+   MILESTONE — DESIGN TOKENS
+   Deep navy-charcoal ink, warm off-white paper, signal-orange accent.
+   ========================================================================== */
+
+:root {
+  /* --- Colour ---------------------------------------------------------- */
+  --ink: #0e1621; /* primary dark — headings, dark sections */
+  --ink-2: #16212f; /* raised dark surface */
+  --ink-3: #1f2c3d; /* hairlines on dark */
+  --slate: #47566a; /* secondary text on dark backgrounds */
+
+  --paper: #f4f1ec; /* warm off-white page ground */
+  --paper-2: #eae5dc; /* recessed warm surface */
+  --white: #ffffff;
+
+  --text: #16212f; /* body text on light */
+  --text-soft: #5a6675; /* secondary text on light */
+  --text-faint: #67717f; /* labels, meta — 4.95:1 on white */
+
+  --line: #e0dad0; /* borders on light */
+  --line-strong: #cec6b8;
+
+  --accent: #e8531e; /* signal orange — surfaces, icons, rules */
+  --accent-dark: #c8410f;
+  --accent-soft: #fdeee7;
+  --accent-strong: #a8330a; /* on the soft tint — 5.2:1 */
+  --accent-text: #b8380b; /* accent as small text on light — 5.8:1 */
+  --accent-ink: #0e1621; /* text on an accent fill — 4.9:1 */
+
+  --gold: #f2b705; /* star ratings only */
+  --ok: #1c7a4a;
+  --error: #c0341d;
+  --error-soft: #fdeceb;
+
+  /* --- Type ------------------------------------------------------------ */
+  --font-display: 'Archivo', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --font-body: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+
+  --fs-display: clamp(2.4rem, 1.35rem + 4.1vw, 4rem);
+  --fs-h2: clamp(1.95rem, 1.15rem + 2.8vw, 3.1rem);
+  --fs-h3: clamp(1.2rem, 1.02rem + 0.6vw, 1.45rem);
+  --fs-lede: clamp(1.02rem, 0.94rem + 0.36vw, 1.2rem);
+  --fs-body: 1rem;
+  --fs-sm: 0.9rem;
+  --fs-xs: 0.78rem;
+  --fs-label: 0.72rem;
+
+  /* --- Space ----------------------------------------------------------- */
+  --container: 1220px;
+  --container-narrow: 880px;
+  --gutter: clamp(1.15rem, 4vw, 2.5rem);
+  --section-y: clamp(4rem, 7.5vw, 7.25rem);
+  --gap: clamp(1rem, 2.2vw, 1.75rem);
+
+  /* --- Form ------------------------------------------------------------ */
+  --radius-xs: 3px;
+  --radius: 5px;
+  --radius-lg: 8px;
+  --tap: 48px; /* minimum interactive target */
+
+  --shadow-sm: 0 1px 2px rgba(14, 22, 33, 0.05), 0 2px 8px rgba(14, 22, 33, 0.04);
+  --shadow-md: 0 2px 4px rgba(14, 22, 33, 0.05), 0 12px 28px -10px rgba(14, 22, 33, 0.16);
+  --shadow-lg: 0 4px 8px rgba(14, 22, 33, 0.06), 0 30px 60px -22px rgba(14, 22, 33, 0.3);
+
+  --ease: cubic-bezier(0.2, 0.7, 0.3, 1);
+  --dur: 260ms;
+
+  color-scheme: light;
+}
+
+/* Dark surfaces re-point the text tokens so components stay context-free. */
+.on-dark {
+  --text: #f4f1ec;
+  --text-soft: #a4b0c0;
+  --text-faint: #7d8b9c;
+  --line: rgba(244, 241, 236, 0.14);
+  --line-strong: rgba(244, 241, 236, 0.26);
+  --accent-text: #ff8a5c; /* accent as text on ink — 7.8:1 */
+  --white: #16212f;
+  --paper: #0e1621;
+}
