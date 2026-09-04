@@ -12,7 +12,7 @@ export default function Courses() {
           </h2>
           <p className="section-lede">
             Six focused courses, from a first day behind the wheel to a licence test two weeks
-            away. Every course includes the training car, fuel and a certified instructor.
+            away. Every course includes the training car and a certified instructor.
           </p>
         </div>
 
@@ -45,8 +45,8 @@ export default function Courses() {
                   {course.duration}
                 </p>
                 <p className="course__price">
-                  <b>{course.price}</b>
-                  <span>All inclusive</span>
+                  <b>Contact us</b>
+                  <span>For details</span>
                 </p>
               </div>
 

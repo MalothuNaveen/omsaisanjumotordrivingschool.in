@@ -1,6 +1,6 @@
 import { useMemo, useRef, useState } from 'react'
 import Icon from './ui/Icon'
-import { formOptions, whatsappUrl } from '../data/site'
+import { contact, formOptions } from '../data/site'
 
 const EMPTY = {
   name: '',
@@ -55,6 +55,35 @@ function validate(values) {
   }
 
   return errors
+}
+
+function formatDate(date) {
+  return new Date(`${date}T00:00:00`).toLocaleDateString('en-IN', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+  })
+}
+
+function bookingWhatsAppUrl(values) {
+  const lines = [
+    'Hi Om Sai Sanju Motor Driving School, I want to book my first driving lesson.',
+    '',
+    `Name: ${values.name.trim()}`,
+    `Phone: ${values.phone.trim()}`,
+    values.email.trim() ? `Email: ${values.email.trim()}` : null,
+    `Course: ${values.course}`,
+    `Transmission: ${values.transmission}`,
+    `Area: ${values.area}`,
+    `Preferred start date: ${formatDate(values.date)}`,
+    `Preferred time: ${values.time || 'Any available slot'}`,
+    values.experience ? `Experience: ${values.experience}` : null,
+    values.message.trim() ? `Message: ${values.message.trim()}` : null,
+    '',
+    'Please confirm the available slot.',
+  ].filter(Boolean)
+
+  return `https://wa.me/${contact.whatsappNumber}?text=${encodeURIComponent(lines.join('\n'))}`
 }
 
 /* --- Small field wrappers, so every control gets the same label / error rig -- */
@@ -125,10 +154,11 @@ export default function BookingForm() {
       return
     }
 
-    /* Demo only — nothing is sent anywhere. Wire this up to a real endpoint
-       (or a WhatsApp deep link) when the site goes live. */
-    setSubmitted(values)
+    const nextSubmitted = { ...values, whatsappUrl: bookingWhatsAppUrl(values) }
+    setSubmitted(nextSubmitted)
     setValues(EMPTY)
+    const opened = window.open(nextSubmitted.whatsappUrl, '_blank', 'noopener,noreferrer')
+    if (!opened) window.location.assign(nextSubmitted.whatsappUrl)
     window.requestAnimationFrame(() => headingRef.current?.focus())
   }
 
@@ -138,11 +168,7 @@ export default function BookingForm() {
       ['Course', submitted.course],
       ['Transmission', submitted.transmission],
       ['Area', submitted.area],
-      ['Start date', new Date(`${submitted.date}T00:00:00`).toLocaleDateString('en-IN', {
-        day: 'numeric',
-        month: 'long',
-        year: 'numeric',
-      })],
+      ['Start date', formatDate(submitted.date)],
       submitted.time ? ['Preferred time', submitted.time] : null,
     ].filter(Boolean)
 
@@ -152,11 +178,11 @@ export default function BookingForm() {
           <Icon name="check" size={30} />
         </div>
         <h3 className="booking__done-title" tabIndex={-1} ref={headingRef}>
-          Request received, {submitted.name.split(' ')[0]}
+          WhatsApp message is ready, {submitted.name.split(' ')[0]}
         </h3>
         <p className="booking__done-text">
-          A course coordinator will call you on <strong>{submitted.phone}</strong> within one
-          working day to confirm your instructor and slot. Nothing is payable until then.
+          Your booking details opened in WhatsApp. Press send there and our team will confirm your
+          instructor and slot on <strong>{submitted.phone}</strong>.
         </p>
 
         <dl className="booking__recap">
@@ -171,12 +197,12 @@ export default function BookingForm() {
         <div className="booking__done-actions">
           <a
             className="btn btn--wa"
-            href={whatsappUrl}
+            href={submitted.whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
           >
             <Icon name="whatsapp" size={18} />
-            Message us on WhatsApp
+            Open WhatsApp Again
           </a>
           <button type="button" className="btn btn--outline" onClick={() => setSubmitted(null)}>
             Make another booking

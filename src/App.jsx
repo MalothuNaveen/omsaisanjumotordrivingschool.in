@@ -13,7 +13,6 @@ import Safety from './components/Safety'
 import ProgressJourney from './components/ProgressJourney'
 import About from './components/About'
 import Reviews from './components/Reviews'
-import Pricing from './components/Pricing'
 import Locations from './components/Locations'
 import Faq from './components/Faq'
 import FinalCta from './components/FinalCta'
@@ -51,7 +50,6 @@ export default function App() {
         <ProgressJourney />
         <About />
         <Reviews />
-        <Pricing />
         <Locations />
         <Faq />
         <FinalCta />

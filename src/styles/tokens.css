@@ -1,40 +1,40 @@
 /* ==========================================================================
    MILESTONE — DESIGN TOKENS
-   Deep navy-charcoal ink, warm off-white paper, signal-orange accent.
+   MyDrivingSchool-inspired green, white and mint system.
    ========================================================================== */
 
 :root {
   /* --- Colour ---------------------------------------------------------- */
-  --ink: #0e1621; /* primary dark — headings, dark sections */
-  --ink-2: #16212f; /* raised dark surface */
-  --ink-3: #1f2c3d; /* hairlines on dark */
-  --slate: #47566a; /* secondary text on dark backgrounds */
+  --ink: #06231c; /* primary dark green — headings, dark sections */
+  --ink-2: #0b342a; /* raised dark green surface */
+  --ink-3: #16473b; /* hairlines on dark */
+  --slate: #5d716b; /* secondary text on dark backgrounds */
 
-  --paper: #f4f1ec; /* warm off-white page ground */
-  --paper-2: #eae5dc; /* recessed warm surface */
+  --paper: #f7fbf8; /* fresh white-mint page ground */
+  --paper-2: #eaf7ef; /* recessed mint surface */
   --white: #ffffff;
 
-  --text: #16212f; /* body text on light */
-  --text-soft: #5a6675; /* secondary text on light */
-  --text-faint: #67717f; /* labels, meta — 4.95:1 on white */
+  --text: #10231d; /* body text on light */
+  --text-soft: #556a63; /* secondary text on light */
+  --text-faint: #667b74; /* labels, meta */
 
-  --line: #e0dad0; /* borders on light */
-  --line-strong: #cec6b8;
+  --line: #d9ebe1; /* borders on light */
+  --line-strong: #b7d8c7;
 
-  --accent: #e8531e; /* signal orange — surfaces, icons, rules */
-  --accent-dark: #c8410f;
-  --accent-soft: #fdeee7;
-  --accent-strong: #a8330a; /* on the soft tint — 5.2:1 */
-  --accent-text: #b8380b; /* accent as small text on light — 5.8:1 */
-  --accent-ink: #0e1621; /* text on an accent fill — 4.9:1 */
+  --accent: #16a34a; /* primary green CTA */
+  --accent-dark: #0f7a38;
+  --accent-soft: #dcfce7;
+  --accent-strong: #166534;
+  --accent-text: #15803d;
+  --accent-ink: #ffffff;
 
   --gold: #f2b705; /* star ratings only */
-  --ok: #1c7a4a;
+  --ok: #16a34a;
   --error: #c0341d;
   --error-soft: #fdeceb;
 
   /* --- Type ------------------------------------------------------------ */
-  --font-display: 'Archivo', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --font-display: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
   --font-body: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
 
   --fs-display: clamp(2.4rem, 1.35rem + 4.1vw, 4rem);
@@ -54,14 +54,14 @@
   --gap: clamp(1rem, 2.2vw, 1.75rem);
 
   /* --- Form ------------------------------------------------------------ */
-  --radius-xs: 3px;
-  --radius: 5px;
-  --radius-lg: 8px;
+  --radius-xs: 10px;
+  --radius: 14px;
+  --radius-lg: 22px;
   --tap: 48px; /* minimum interactive target */
 
-  --shadow-sm: 0 1px 2px rgba(14, 22, 33, 0.05), 0 2px 8px rgba(14, 22, 33, 0.04);
-  --shadow-md: 0 2px 4px rgba(14, 22, 33, 0.05), 0 12px 28px -10px rgba(14, 22, 33, 0.16);
-  --shadow-lg: 0 4px 8px rgba(14, 22, 33, 0.06), 0 30px 60px -22px rgba(14, 22, 33, 0.3);
+  --shadow-sm: 0 1px 2px rgba(6, 35, 28, 0.05), 0 2px 8px rgba(6, 35, 28, 0.04);
+  --shadow-md: 0 2px 4px rgba(6, 35, 28, 0.05), 0 16px 34px -14px rgba(6, 35, 28, 0.18);
+  --shadow-lg: 0 8px 18px rgba(6, 35, 28, 0.08), 0 34px 70px -30px rgba(6, 35, 28, 0.26);
 
   --ease: cubic-bezier(0.2, 0.7, 0.3, 1);
   --dur: 260ms;
@@ -71,12 +71,12 @@
 
 /* Dark surfaces re-point the text tokens so components stay context-free. */
 .on-dark {
-  --text: #f4f1ec;
-  --text-soft: #a4b0c0;
-  --text-faint: #7d8b9c;
-  --line: rgba(244, 241, 236, 0.14);
-  --line-strong: rgba(244, 241, 236, 0.26);
-  --accent-text: #ff8a5c; /* accent as text on ink — 7.8:1 */
+  --text: #f7fbf8;
+  --text-soft: #b8d4ca;
+  --text-faint: #8fb2a5;
+  --line: rgba(247, 251, 248, 0.14);
+  --line-strong: rgba(247, 251, 248, 0.26);
+  --accent-text: #86efac;
   --white: #16212f;
-  --paper: #0e1621;
+  --paper: #06231c;
 }
