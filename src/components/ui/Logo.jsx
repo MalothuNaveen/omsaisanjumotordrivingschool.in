@@ -8,7 +8,7 @@ export default function Logo({ href = '#home', onClick, className = '' }) {
       onClick={onClick}
       aria-label={`${business.nameFull} — back to top`}
     >
-      <img className="logo__mark" src="/images/logo.png" alt="" />
+      <img className="logo__mark" src="/logo.png" alt="" />
     </a>
   )
 }

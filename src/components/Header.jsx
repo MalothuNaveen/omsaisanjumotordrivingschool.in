@@ -20,7 +20,7 @@ export default function Header({ activeId }) {
 
   /* Close the drawer if the viewport grows into the desktop layout. */
   useEffect(() => {
-    const mq = window.matchMedia('(min-width: 1080px)')
+    const mq = window.matchMedia('(min-width: 1400px)')
     const onChange = (e) => e.matches && setOpen(false)
     mq.addEventListener('change', onChange)
     return () => mq.removeEventListener('change', onChange)
