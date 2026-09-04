@@ -91,7 +91,7 @@ export default function Header({ activeId }) {
               {contact.phoneDisplay}
             </a>
             <a className="btn btn--sm" href="#contact">
-              Book a Lesson
+              Book Now
             </a>
             <button
               ref={toggleRef}
@@ -153,7 +153,7 @@ export default function Header({ activeId }) {
 
         <div className="drawer__actions">
           <a className="btn btn--block" href="#contact" onClick={closeDrawer}>
-            Book a Lesson
+            Book Now
           </a>
           <a
             className="btn btn--wa btn--block"

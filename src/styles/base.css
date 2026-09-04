@@ -11,7 +11,13 @@
 html {
   -webkit-text-size-adjust: 100%;
   scroll-behavior: smooth;
-  scroll-padding-top: 96px;
+  scroll-padding-top: 76px;
+  overflow-x: hidden;
+}
+@media (min-width: 1400px) {
+  html {
+    scroll-padding-top: 96px;
+  }
 }
 
 body {
@@ -26,10 +32,10 @@ body {
   overflow-x: hidden;
 }
 
-/* Room for the mobile action bar so the footer is never covered. */
+/* Room for the mobile action bar (now two stacked buttons) so the footer is never covered. */
 @media (max-width: 899px) {
   body {
-    padding-bottom: calc(64px + env(safe-area-inset-bottom, 0px));
+    padding-bottom: calc(112px + env(safe-area-inset-bottom, 0px));
   }
 }
 

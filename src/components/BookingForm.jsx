@@ -421,7 +421,7 @@ export default function BookingForm() {
           pay nothing until the slot is confirmed.
         </p>
         <button type="submit" className="btn btn--lg">
-          Book a Lesson
+          Book Now
           <Icon name="arrowRight" size={18} />
         </button>
       </div>

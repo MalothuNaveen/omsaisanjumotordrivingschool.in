@@ -66,6 +66,13 @@
 .btn:hover .icon:last-child {
   transform: translateX(3px);
 }
+@media (max-width: 420px) {
+  .btn {
+    white-space: normal;
+    text-align: center;
+    line-height: 1.3;
+  }
+}
 
 /* Outline on dark backgrounds */
 .btn--ghost {
@@ -376,9 +383,15 @@
 .header-inner {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  min-height: 108px;
+  gap: 0.75rem;
+  min-height: 68px;
   flex-wrap: nowrap;
+}
+@media (min-width: 480px) {
+  .header-inner {
+    gap: 1rem;
+    min-height: 80px;
+  }
 }
 @media (min-width: 1400px) {
   .header-inner {
@@ -393,15 +406,27 @@
   align-items: center;
   gap: 0.65rem;
   margin-right: auto;
-  min-height: 84px;
+  min-height: 48px;
 }
 .logo__mark {
-  width: 84px;
-  height: 84px;
+  width: 48px;
+  height: 48px;
   flex: none;
   object-fit: contain;
 }
+@media (min-width: 480px) {
+  .logo {
+    min-height: 60px;
+  }
+  .logo__mark {
+    width: 60px;
+    height: 60px;
+  }
+}
 @media (min-width: 1400px) {
+  .logo {
+    min-height: 100px;
+  }
   .logo__mark {
     width: 100px;
     height: 100px;
@@ -666,11 +691,14 @@
   right: 0;
   bottom: 0;
   z-index: 90;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-direction: column;
   gap: 0;
-  background: var(--ink);
+  background: rgba(6, 35, 28, 0.92);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
   border-top: 1px solid var(--ink-3);
+  box-shadow: 0 -8px 24px -12px rgba(0, 0, 0, 0.4);
   padding-bottom: env(safe-area-inset-bottom, 0px);
 }
 @media (min-width: 900px) {
@@ -683,7 +711,7 @@
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  min-height: 64px;
+  min-height: 56px;
   font-family: var(--font-display);
   font-size: 0.8rem;
   font-weight: 700;
@@ -695,7 +723,7 @@
   cursor: pointer;
 }
 .action-bar__btn + .action-bar__btn {
-  border-left: 1px solid var(--ink-3);
+  border-top: 1px solid var(--ink-3);
 }
 .action-bar__btn--primary {
   background: var(--accent);
@@ -969,6 +997,7 @@
   min-width: 44px;
   color: #a4b0c0;
   font-size: var(--fs-sm);
+  overflow-wrap: anywhere;
   transition: color var(--dur) var(--ease);
 }
 .footer-list a:hover {

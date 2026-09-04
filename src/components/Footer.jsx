@@ -2,6 +2,12 @@ import Icon from './ui/Icon'
 import Logo from './ui/Logo'
 import { business, contact, courses, footerLinks, mapsUrl, serviceAreas, stats, whatsappUrl } from '../data/site'
 
+const designerWhatsappUrl =
+  'https://wa.me/919515538159?text=' +
+  encodeURIComponent(
+    'Hi, I saw the website you built for Om Sai Sanju Motor Driving School. I would like a website for my business too.',
+  )
+
 export default function Footer() {
   const year = new Date().getFullYear()
   const rating = stats.find((stat) => stat.value.includes('/5'))
@@ -25,7 +31,7 @@ export default function Footer() {
             </p>
 
             <a className="btn btn--sm" href="#contact">
-              Book a Lesson
+              Book Now
             </a>
           </div>
 
@@ -106,8 +112,19 @@ export default function Footer() {
           <nav aria-label="Legal">
             <a href="./privacy.html">Privacy Policy</a>
             <a href="./terms.html">Terms &amp; Conditions</a>
-            <a href="#contact">Book a lesson</a>
+            <a href="#contact">Book now</a>
           </nav>
+
+          <p className="footer-demo">
+            Website designed by{' '}
+            <a href="https://www.griffinaitech.com" target="_blank" rel="noopener noreferrer">
+              Griffin AI Tech
+            </a>{' '}
+            — Want one like this for your business?{' '}
+            <a href={designerWhatsappUrl} target="_blank" rel="noopener noreferrer">
+              Contact us
+            </a>
+          </p>
         </div>
       </div>
     </footer>

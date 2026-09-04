@@ -19,7 +19,7 @@ export default function Hero() {
 
           <div className="hero__actions">
             <a className="btn btn--lg" href="#contact">
-              Book Your First Lesson
+              Book Now
               <Icon name="arrowRight" size={18} />
             </a>
             <a

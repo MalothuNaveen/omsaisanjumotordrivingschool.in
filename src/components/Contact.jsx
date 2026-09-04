@@ -7,7 +7,7 @@ export default function Contact() {
     <section className="section section--paper2" id="contact" aria-labelledby="contact-title">
       <div className="container">
         <div className="section-head" data-reveal>
-          <p className="eyebrow">Book a lesson</p>
+          <p className="eyebrow">Book now</p>
           <h2 className="section-title" id="contact-title">
             Tell Us When You’d Like to Start
           </h2>

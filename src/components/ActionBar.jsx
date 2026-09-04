@@ -8,7 +8,7 @@ export default function ActionBar() {
       <div className="action-bar">
         <a className="action-bar__btn action-bar__btn--primary" href="#contact">
           <Icon name="calendar" size={18} />
-          Book a Lesson
+          Book Now
         </a>
         <a
           className="action-bar__btn action-bar__btn--wa"
