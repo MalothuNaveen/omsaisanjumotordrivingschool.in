@@ -991,12 +991,14 @@
 .footer-list a,
 .footer-list span {
   display: inline-flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 0.55rem;
   min-height: 44px;
   min-width: 44px;
+  padding-top: 0.65rem;
   color: #a4b0c0;
   font-size: var(--fs-sm);
+  line-height: 1.5;
   overflow-wrap: anywhere;
   transition: color var(--dur) var(--ease);
 }
@@ -1006,6 +1008,7 @@
 .footer-list .icon {
   color: var(--accent);
   flex: none;
+  margin-top: 0.15em;
 }
 .footer-bottom {
   margin-top: clamp(2.5rem, 5vw, 3.5rem);
