@@ -51,8 +51,13 @@ export default function Reviews() {
           </div>
 
           <div className="reviews__portrait" data-reveal data-reveal-delay="1">
-            {/* IMAGE SLOT: learner / student — see src/data/images.js → 'learner-student' */}
-            <ImageSlot id="learner-student" className="slot--hover" sizes="(min-width: 900px) 26vw, 92vw" />
+            {/* IMAGE SLOT: real review car — see src/data/images.js → 'review-real-car' */}
+            <ImageSlot id="review-real-car" className="slot--hover" sizes="(min-width: 900px) 30vw, 92vw">
+              <figcaption className="reviews__photo-badge">
+                <Icon name="car" size={17} />
+                Real training car
+              </figcaption>
+            </ImageSlot>
           </div>
         </div>
 

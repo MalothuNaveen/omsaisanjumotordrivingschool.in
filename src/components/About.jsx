@@ -3,7 +3,7 @@ import { business } from '../data/site'
 
 const points = [
   { value: '2017', label: 'Founded in Alwal, Secunderabad' },
-  { value: '4.5/5', label: 'Google rating' },
+  { value: '4.5/5', label: 'Learner rating' },
   { value: 'RTO', label: 'Licensed driving school, Medchal district' },
   { value: '6 days', label: 'A week, from 6:00 AM to 8:00 PM' },
 ]

@@ -9,11 +9,11 @@ export default function Locations() {
         <div className="section-head" data-reveal>
           <p className="eyebrow">Where we teach</p>
           <h2 className="section-title" id="locations-title">
-            Serving Alwal, Secunderabad
+            Serving Alwal, Suchitra & Nearby Areas
           </h2>
           <p className="section-lede">
-            Lessons start from our office in Alwal, so you practise on the roads you will actually
-            drive on every day.
+            Lessons start from our Alwal office or from your pickup point, so you practise on the
+            roads you will actually drive on every day.
           </p>
         </div>
 

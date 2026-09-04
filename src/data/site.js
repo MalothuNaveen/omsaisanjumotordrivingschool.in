@@ -2,11 +2,11 @@
  * ============================================================================
  *  OM SAI SANJU MOTOR DRIVING SCHOOL — SITE CONTENT
  * ============================================================================
- *  This is the single place to edit every piece of copy, price, name and
+ *  This is the single place to edit every piece of copy, name and
  *  contact detail on the website. Nothing here is hard-coded in components.
  *
  *  Business identity and contact details below are real (from the RTA licence).
- *  NOTE: stats, courses/prices, instructors, reviews and service areas are
+ *  NOTE: stats, instructors, reviews and service areas are
  *  still DEMO PLACEHOLDER CONTENT — replace with real figures before launch.
  * ============================================================================
  */
@@ -74,23 +74,21 @@ export const hero = {
   trustPoints: ['Beginner Friendly', 'Manual & Automatic', 'Flexible Timings', 'Safety-Focused'],
 }
 
-/* --- Trust bar (real figures — RTA licence + Google Business reviews) --- */
+/* --- Trust bar ---------------------------------------------------------- */
 export const stats = [
   { value: '9+', label: 'Years of experience', detail: 'Serving Alwal & Secunderabad since 2017' },
-  { value: '4.5/5', label: 'Google rating', detail: 'Rated by our learners on Google' },
+  { value: '4.5/5', label: 'Learner rating', detail: 'Rated by our learners' },
   { value: '5', label: 'Registered training vehicles', detail: 'Endorsed on the RTO licence' },
   { value: 'RTO', label: 'Licensed driving school', detail: 'Licensed under Telangana RTA, Medchal district' },
 ]
 
 /* --- Courses ------------------------------------------------------------ */
-/*  Prices are plain strings — edit them directly.                          */
 export const courses = [
   {
     id: 'beginner',
     name: 'Beginner Driving Course',
     level: 'No experience needed',
     duration: '10 lessons · 2–3 weeks',
-    price: '₹4,999',
     summary:
       'Start from the very first day behind the wheel. Controls, steering, braking and quiet-road practice, taught slowly and repeated until it feels natural.',
     highlights: ['Cockpit drill & controls', 'Clutch and biting point', 'Quiet-road driving'],
@@ -101,7 +99,6 @@ export const courses = [
     name: 'Confidence Driving Course',
     level: 'Some practice already',
     duration: '8 lessons · 2 weeks',
-    price: '₹5,499',
     summary:
       'For drivers who can move the car but freeze in traffic. Junctions, lane discipline, roundabouts and busy Hyderabad roads at a manageable pace.',
     highlights: ['City traffic handling', 'Junctions & roundabouts', 'Lane discipline'],
@@ -112,7 +109,6 @@ export const courses = [
     name: 'Licence Test Preparation',
     level: 'Test booked or booking soon',
     duration: '6 lessons · 1–2 weeks',
-    price: '₹4,499',
     summary:
       'Everything the RTO looks for. H-track reversing, 8-track, hill start, hand signals and two full mock tests before the real one.',
     highlights: ['H & 8 track practice', 'Hill start control', 'Two mock test runs'],
@@ -123,7 +119,6 @@ export const courses = [
     name: 'Manual Car Training',
     level: 'All levels',
     duration: '10 lessons · 2–3 weeks',
-    price: '₹5,999',
     summary:
       'Proper clutch and gear control — the part most learners find hardest. Smooth starts, hill holds, downshifts and stop-start traffic without stalling.',
     highlights: ['Clutch control drills', 'Gear selection by feel', 'Stop-start traffic'],
@@ -134,7 +129,6 @@ export const courses = [
     name: 'Automatic Car Training',
     level: 'All levels',
     duration: '8 lessons · 2 weeks',
-    price: '₹5,499',
     summary:
       'No clutch, no gears — more attention on the road itself. Ideal if you drive an automatic at home or want the shortest route to driving alone.',
     highlights: ['Pedal discipline', 'Creep & parking control', 'Road awareness focus'],
@@ -145,7 +139,6 @@ export const courses = [
     name: 'Refresher Driving Lessons',
     level: 'Licensed but out of practice',
     duration: '4 lessons · 1 week',
-    price: '₹3,999',
     summary:
       'You have a licence but have not driven in years. A short, judgement-free reset covering city traffic, parking and highway confidence.',
     highlights: ['Judgement-free pace', 'Parking refresh', 'Highway re-entry'],
@@ -264,10 +257,10 @@ export const skills = [
 export const vehicles = [
   {
     id: 'manual-car',
-    name: 'Manual Training Car',
-    type: 'Hatchback · 5-speed manual',
+    name: 'Cars Training',
+    type: 'Sai Sanju training car',
     imageId: 'vehicle-manual',
-    body: 'A light-clutch hatchback chosen specifically because it is forgiving for first-time learners in stop-start traffic.',
+    body: 'Learn in our own branded training car with instructor guidance, pickup support and calm road practice from the first lesson.',
     specs: [
       'Dual controls',
       'Instructor supervision',
@@ -277,14 +270,14 @@ export const vehicles = [
   },
   {
     id: 'automatic-car',
-    name: 'Automatic Training Car',
-    type: 'Hatchback · AMT automatic',
+    name: 'Cars Training',
+    type: 'Sai Sanju training car',
     imageId: 'vehicle-automatic',
-    body: 'No clutch to manage, so attention goes to the road. The quickest route to driving on your own if you own an automatic.',
+    body: 'Practise road confidence, steering control, parking and traffic judgement in a supervised Sai Sanju driving school car.',
     specs: [
-      'Dual brake control',
+      'Dual controls',
       'Instructor supervision',
-      'Reverse camera & sensors',
+      'Pickup and drop support',
       'Beginner friendly',
     ],
   },
@@ -341,14 +334,14 @@ export const journey = [
   { km: '7', title: 'Confident Driver', body: 'A full solo-style drive, start to finish, with the instructor silent.' },
 ]
 
-/* --- Reviews (real Google Business reviews, lightly copy-edited for typos) */
+/* --- Reviews ------------------------------------------------------------ */
 export const reviews = [
   {
     id: 'r1',
     quote:
       'Good driving school. They were punctual and picked me up every day, which was very convenient. The instructions were clear and easy to follow. I feel much more confident driving now. Mahender is a good instructor who helps you build confidence behind the wheel.',
     name: 'Neha Fathima',
-    meta: 'Google review · Local Guide',
+    meta: 'Learner feedback',
     rating: 5,
   },
   {
@@ -356,7 +349,7 @@ export const reviews = [
     quote:
       'Very friendly, respectful, and responsible. The instructors teach with a lot of patience and make sure you understand every step clearly. The overall experience was smooth and comfortable, and they create a supportive environment for learning.',
     name: 'Akshara Reddy',
-    meta: 'Google review',
+    meta: 'Learner feedback',
     rating: 5,
   },
   {
@@ -364,7 +357,7 @@ export const reviews = [
     quote:
       'Fantastic experience with Sai Sanju Motor Driving School! The instructors are knowledgeable, patient, and make you feel confident behind the wheel. They focus on safety and personalise each lesson to help you improve. I passed my test on the first try, thanks to them!',
     name: 'Sai Kiran Kavali',
-    meta: 'Google review',
+    meta: 'Learner feedback',
     rating: 5,
   },
   {
@@ -372,7 +365,7 @@ export const reviews = [
     quote:
       'It’s a good driving school, comfortable timings, and my instructor Mr. Prashanth is very patient and teaches every thing in detail while driving. I got my licence without any glitches. Thank you Mr Santosh and Mr Prashant.',
     name: 'Bhavani Padigela',
-    meta: 'Google review · Local Guide',
+    meta: 'Learner feedback',
     rating: 5,
   },
   {
@@ -380,7 +373,7 @@ export const reviews = [
     quote:
       'My experience was very good with this driving school. I have recently started learning to drive and this school is the best for beginners. The instructor is very patient, and really helps with the whole process. He is also polite. Highly recommend this school!',
     name: 'Uma Rani',
-    meta: 'Google review',
+    meta: 'Learner feedback',
     rating: 5,
   },
   {
@@ -388,75 +381,19 @@ export const reviews = [
     quote:
       'Learnt driving hassle-free from Sai Sanju Driving School 3 years back — classes are regular, clear explanation and guidance. I also referred all my friends and even they had a similar experience. Thank you Santhosh garu.',
     name: 'Moda Venkata Kumari',
-    meta: 'Google review',
+    meta: 'Learner feedback',
     rating: 5,
   },
-]
-
-/* --- Pricing plans ------------------------------------------------------ */
-export const plans = [
-  {
-    id: 'starter',
-    name: 'Starter',
-    price: '₹3,999',
-    period: 'one-time',
-    tagline: 'A first taste of driving, with no long commitment.',
-    features: [
-      '5 practical lessons (45 min each)',
-      'Manual training car',
-      'Dual-control vehicle provided',
-      'Instructor guidance throughout',
-      'Written progress card',
-    ],
-    cta: 'Choose Starter',
-    featured: false,
-  },
-  {
-    id: 'confidence',
-    name: 'Confidence',
-    price: '₹5,999',
-    period: 'one-time',
-    tagline: 'Our most popular plan — enough lessons to actually drive alone.',
-    features: [
-      '8 practical lessons (60 min each)',
-      'Manual or automatic car',
-      'Parking practice included',
-      'City traffic training',
-      'Free rescheduling',
-      'Written progress card',
-    ],
-    cta: 'Choose Confidence',
-    featured: true,
-  },
-  {
-    id: 'complete',
-    name: 'Complete',
-    price: '₹8,999',
-    period: 'one-time',
-    tagline: 'Beginner to licence-ready, with nothing left to arrange later.',
-    features: [
-      '12 practical lessons (60 min each)',
-      'Manual or automatic car',
-      'Road confidence & highway module',
-      'Full licence test preparation',
-      'Two mock RTO tests',
-      'Pickup within service areas',
-      'Free rescheduling',
-    ],
-    cta: 'Choose Complete',
-    featured: false,
-  },
-]
-
-export const pricingNotes = [
-  'All prices include the training vehicle, fuel and instructor.',
-  'RTO licence and test fees are paid separately to the government.',
-  'Lessons stay valid for 90 days from the date of booking.',
 ]
 
 /* --- Service areas ------------------------------------------------------ */
 export const serviceAreas = [
   { name: 'Alwal', note: 'Srinivasa Nagar Colony, Temple Alwal', pickup: true },
+  { name: 'Suchitra', note: 'Home pickup and drop available on request', pickup: true },
+  { name: 'Kompally', note: 'Main road and residential route practice', pickup: true },
+  { name: 'Bolarum', note: 'Beginner-friendly local road training', pickup: true },
+  { name: 'Old Alwal', note: 'Pickup and lesson slots available', pickup: true },
+  { name: 'Bowenpally', note: 'Manual and automatic lessons available', pickup: true },
 ]
 
 /* --- FAQ ---------------------------------------------------------------- */
@@ -471,7 +408,7 @@ export const faqs = [
   },
   {
     q: 'Do you provide the car?',
-    a: 'Yes. Every lesson is conducted in our own dual-control training car, and fuel is included in the course price. You never need to arrange a vehicle, and you are supervised at all times.',
+    a: 'Yes. Every lesson is conducted in our own dual-control training car. You never need to arrange a vehicle, and you are supervised at all times.',
   },
   {
     q: 'Do you teach automatic cars?',
@@ -487,7 +424,7 @@ export const faqs = [
   },
   {
     q: 'Do you offer pickup from my home or office?',
-    a: 'Pickup and drop within Alwal is included in the Complete plan and available as a small add-on for other courses. Share your address when booking and we will confirm whether it falls inside the zone.',
+    a: 'Yes. We offer home pickup and drop in Alwal, Suchitra, Kompally, Bolarum, Old Alwal, Bowenpally and nearby areas based on slot availability. Share your address when booking and we will confirm the pickup timing.',
   },
   {
     q: 'Can you prepare me for my driving licence test?',
@@ -503,11 +440,11 @@ export const faqs = [
   },
   {
     q: 'How do I book a lesson?',
-    a: 'Fill in the booking form on this page, message us on WhatsApp, or call the office. We confirm your instructor and slot within one working day, and payment is made after that confirmation.',
+    a: 'Fill in the booking form on this page, message us on WhatsApp, or call the office. We confirm your instructor and slot within one working day.',
   },
   {
     q: 'What if I need to cancel or reschedule?',
-    a: 'Reschedule free of charge with at least 12 hours’ notice. Lessons stay valid for 90 days from booking, so a busy week never means losing what you paid for.',
+    a: 'Reschedule free of charge with at least 12 hours’ notice. Lessons stay valid for 90 days from booking, so a busy week never disrupts your training plan.',
   },
 ]
 
@@ -539,7 +476,6 @@ export const footerLinks = {
     { label: 'How It Works', href: '#how-it-works' },
     { label: 'Why Choose Us', href: '#why-us' },
     { label: 'Training Vehicles', href: '#vehicles' },
-    { label: 'Pricing', href: '#pricing' },
     { label: 'Reviews', href: '#reviews' },
     { label: 'FAQ', href: '#faq' },
   ],

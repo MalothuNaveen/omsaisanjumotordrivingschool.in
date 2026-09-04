@@ -13,7 +13,7 @@ export default function Vehicles() {
           </h2>
           <p className="section-lede">
             Two training cars, both fitted with instructor-side controls and serviced on a fixed
-            schedule. Fuel is included in every course price.
+            schedule. We will explain the complete course details before booking.
           </p>
         </div>
 

@@ -90,7 +90,7 @@ textarea {
   border-radius: 2px;
 }
 .on-dark :focus-visible {
-  outline-color: #ff8a5c;
+  outline-color: #86efac;
 }
 
 /* --- Skip link --------------------------------------------------------- */

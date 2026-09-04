@@ -108,22 +108,22 @@ export const imageSlots = {
 
   /* ---- TRAINING VEHICLE IMAGES ----------------------------------------- */
   'vehicle-manual': {
-    src: 'images/vehicle-manual.png',
-    alt: 'The Om Sai Sanju manual training hatchback with dual controls, photographed from a front three-quarter angle.',
-    ratio: '16 / 10',
-    position: 'center center',
-    size: '1600 × 1000',
-    brief:
-      'Manual training vehicle. Front three-quarter, clean background, school livery visible. Automotive-catalogue framing, car filling the frame width.',
+    src: 'images/sai-sanju-white-training-car.png',
+    alt: 'White Om Sai Sanju Motor Driving School training car with the school board mounted on top.',
+    ratio: '4 / 5',
+    ratioMobile: '4 / 3',
+    position: 'center top',
+    size: '960 × 1280',
+    brief: 'Cars training. Real white Sai Sanju training car with school board visible.',
   },
   'vehicle-automatic': {
-    src: 'images/vehicle-automatic.png',
-    alt: 'The Om Sai Sanju automatic training hatchback photographed from a front three-quarter angle.',
-    ratio: '16 / 10',
-    position: 'center center',
-    size: '1600 × 1000',
-    brief:
-      'Automatic training vehicle. Same angle, lighting and distance as the manual car so the pair reads as a set.',
+    src: 'images/sai-sanju-red-training-car.png',
+    alt: 'Red Om Sai Sanju Motor Driving School training car with the school board mounted on top.',
+    ratio: '4 / 5',
+    ratioMobile: '4 / 3',
+    position: 'center top',
+    size: '960 × 1280',
+    brief: 'Cars training. Real red Sai Sanju training car with school board visible.',
   },
 
   /* ---- SAFETY IMAGE ---------------------------------------------------- */
@@ -147,6 +147,15 @@ export const imageSlots = {
     size: '900 × 1200',
     brief:
       'Student portrait. Genuine, unposed, natural light. Someone in their twenties or thirties beside the car, keys or licence in hand.',
+  },
+  'review-real-car': {
+    src: 'images/sai-sanju-review-car.png',
+    alt: 'Om Sai Sanju Motor Driving School training car with the school board mounted on top.',
+    ratio: '4 / 5',
+    ratioMobile: '4 / 3',
+    position: 'center top',
+    size: '960 × 1280',
+    brief: 'Reviews. Real photo of the Sai Sanju training car used for learner pickup and lessons.',
   },
 
   /* ---- FINAL CTA IMAGE ------------------------------------------------- */
