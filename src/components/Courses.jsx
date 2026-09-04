@@ -11,8 +11,8 @@ export default function Courses() {
             Training That Fits Your Driving Goals
           </h2>
           <p className="section-lede">
-            Six focused courses, from a first day behind the wheel to a licence test two weeks
-            away. Every course includes the training car and a certified instructor.
+            Six focused car driving courses, from a first day behind the wheel to a licence test
+            two weeks away. Every course includes the training car and a certified instructor.
           </p>
         </div>
 

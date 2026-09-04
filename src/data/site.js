@@ -67,7 +67,7 @@ export const navLinks = [
 
 /* --- Hero --------------------------------------------------------------- */
 export const hero = {
-  eyebrow: 'Driving school in Hyderabad · Since 2017',
+  eyebrow: 'Driving Classes & RTO Services',
   headline: ['Learn to Drive.', 'Build Confidence.', 'Go Anywhere.'],
   subhead:
     'Professional driving lessons designed for beginners, busy professionals and anyone ready to become a confident, responsible driver.',
@@ -204,8 +204,8 @@ export const benefits = [
   },
   {
     icon: 'chart',
-    title: 'Progress-Based Learning',
-    body: 'A written progress card after every lesson tells you exactly what improved and what the next lesson will cover.',
+    title: 'Track Your Progress in the App',
+    body: 'Once you enroll, we add you to the MyDrivingSchool app — track your completed classes and course progress right from your phone.',
   },
 ]
 
@@ -389,6 +389,7 @@ export const reviews = [
 /* --- Service areas ------------------------------------------------------ */
 export const serviceAreas = [
   { name: 'Alwal', note: 'Srinivasa Nagar Colony, Temple Alwal', pickup: true },
+  { name: 'Lothkunta', note: 'Home pickup and drop available on request', pickup: true },
   { name: 'Suchitra', note: 'Home pickup and drop available on request', pickup: true },
   { name: 'Kompally', note: 'Main road and residential route practice', pickup: true },
   { name: 'Bolarum', note: 'Beginner-friendly local road training', pickup: true },
@@ -444,7 +445,7 @@ export const faqs = [
   },
   {
     q: 'What if I need to cancel or reschedule?',
-    a: 'Reschedule free of charge with at least 12 hours’ notice. Lessons stay valid for 90 days from booking, so a busy week never disrupts your training plan.',
+    a: 'Reschedule free of charge with at least 12 hours’ notice. The course must be completed within 45 days of joining — access to remaining lessons ends after that. Course fees are non-refundable once paid.',
   },
 ]
 

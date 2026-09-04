@@ -377,12 +377,12 @@
   display: flex;
   align-items: center;
   gap: 1rem;
-  min-height: 74px;
+  min-height: 88px;
   flex-wrap: nowrap;
 }
 @media (min-width: 1080px) {
   .header-inner {
-    min-height: 84px;
+    min-height: 104px;
   }
 }
 
@@ -392,12 +392,19 @@
   align-items: center;
   gap: 0.65rem;
   margin-right: auto;
-  min-height: 44px;
+  min-height: 60px;
 }
 .logo__mark {
-  width: 34px;
-  height: 34px;
+  width: 60px;
+  height: 60px;
   flex: none;
+  object-fit: contain;
+}
+@media (min-width: 1080px) {
+  .logo__mark {
+    width: 72px;
+    height: 72px;
+  }
 }
 .logo__text {
   display: flex;
