@@ -1,6 +1,6 @@
 import Icon from './ui/Icon'
 import Logo from './ui/Logo'
-import { business, contact, courses, footerLinks, mapsUrl, serviceAreas, stats, whatsappUrl } from '../data/site'
+import { business, contact, footerLinks, mapsUrl, serviceAreas, services, stats, whatsappUrl } from '../data/site'
 
 const designerWhatsappUrl =
   'https://wa.me/919515538159?text=' +
@@ -36,11 +36,11 @@ export default function Footer() {
           </div>
 
           <div>
-            <h2 className="footer-heading">Courses</h2>
+            <h2 className="footer-heading">Services</h2>
             <ul className="footer-list">
-              {courses.map((course) => (
-                <li key={course.id}>
-                  <a href="#courses">{course.name}</a>
+              {services.map((service) => (
+                <li key={service.id}>
+                  <a href={service.href}>{service.title}</a>
                 </li>
               ))}
             </ul>

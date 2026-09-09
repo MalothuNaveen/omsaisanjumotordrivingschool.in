@@ -32,12 +32,6 @@ body {
   overflow-x: hidden;
 }
 
-/* Room for the mobile action bar (now two stacked buttons) so the footer is never covered. */
-@media (max-width: 899px) {
-  body {
-    padding-bottom: calc(112px + env(safe-area-inset-bottom, 0px));
-  }
-}
 
 img,
 svg,

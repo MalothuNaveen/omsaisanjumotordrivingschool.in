@@ -56,7 +56,6 @@ export const mapsUrl =
 /* --- Navigation --------------------------------------------------------- */
 export const navLinks = [
   { id: 'home', label: 'Home', href: '#home' },
-  { id: 'courses', label: 'Courses', href: '#courses' },
   { id: 'why-us', label: 'Why Choose Us', href: '#why-us' },
   { id: 'how-it-works', label: 'How It Works', href: '#how-it-works' },
   { id: 'about', label: 'About', href: '#about' },
@@ -68,7 +67,7 @@ export const navLinks = [
 /* --- Hero --------------------------------------------------------------- */
 export const hero = {
   eyebrow: 'Driving Classes & RTO Services',
-  headline: ['Learn to Drive.', 'Build Confidence.', 'Go Anywhere.'],
+  headline: ['Time to Learn', 'with the Best.'],
   subhead:
     'Professional driving lessons designed for beginners, busy professionals and anyone ready to become a confident, responsible driver.',
   trustPoints: ['Beginner Friendly', 'Manual & Automatic', 'Flexible Timings', 'Safety-Focused'],
@@ -82,67 +81,36 @@ export const stats = [
   { value: 'RTO', label: 'Licensed driving school', detail: 'Licensed under Telangana RTA, Medchal district' },
 ]
 
-/* --- Courses ------------------------------------------------------------ */
-export const courses = [
+/* --- Our services (top-level overview cards) ---------------------------- */
+export const services = [
   {
-    id: 'beginner',
-    name: 'Beginner Driving Course',
-    level: 'No experience needed',
-    duration: '10 lessons · 2–3 weeks',
-    summary:
-      'Start from the very first day behind the wheel. Controls, steering, braking and quiet-road practice, taught slowly and repeated until it feels natural.',
-    highlights: ['Cockpit drill & controls', 'Clutch and biting point', 'Quiet-road driving'],
-    featured: false,
+    id: 'four-wheeler-training',
+    imageId: 'service-driving-classes',
+    title: '4-Wheeler Training',
+    note: 'Beginner to advanced car driving lessons',
+    href: '#contact',
   },
   {
-    id: 'confidence',
-    name: 'Confidence Driving Course',
-    level: 'Some practice already',
-    duration: '8 lessons · 2 weeks',
-    summary:
-      'For drivers who can move the car but freeze in traffic. Junctions, lane discipline, roundabouts and busy Hyderabad roads at a manageable pace.',
-    highlights: ['City traffic handling', 'Junctions & roundabouts', 'Lane discipline'],
-    featured: true,
+    id: 'licences',
+    imageId: 'service-rta',
+    imageFit: 'contain',
+    title: 'Driving Licence (LLR/DL)',
+    note: 'Official Parivahan application assistance',
+    href: '#contact',
   },
   {
-    id: 'test-prep',
-    name: 'Licence Test Preparation',
-    level: 'Test booked or booking soon',
-    duration: '6 lessons · 1–2 weeks',
-    summary:
-      'Everything the RTO looks for. H-track reversing, 8-track, hill start, hand signals and two full mock tests before the real one.',
-    highlights: ['H & 8 track practice', 'Hill start control', 'Two mock test runs'],
-    featured: false,
+    id: 'vehicle-registration',
+    imageId: 'service-contact',
+    title: 'Vehicle Registration (RC)',
+    note: 'New and transfer vehicle registration via RTA',
+    href: '#contact',
   },
   {
-    id: 'manual',
-    name: 'Manual Car Training',
-    level: 'All levels',
-    duration: '10 lessons · 2–3 weeks',
-    summary:
-      'Proper clutch and gear control — the part most learners find hardest. Smooth starts, hill holds, downshifts and stop-start traffic without stalling.',
-    highlights: ['Clutch control drills', 'Gear selection by feel', 'Stop-start traffic'],
-    featured: false,
-  },
-  {
-    id: 'automatic',
-    name: 'Automatic Car Training',
-    level: 'All levels',
-    duration: '8 lessons · 2 weeks',
-    summary:
-      'No clutch, no gears — more attention on the road itself. Ideal if you drive an automatic at home or want the shortest route to driving alone.',
-    highlights: ['Pedal discipline', 'Creep & parking control', 'Road awareness focus'],
-    featured: false,
-  },
-  {
-    id: 'refresher',
-    name: 'Refresher Driving Lessons',
-    level: 'Licensed but out of practice',
-    duration: '4 lessons · 1 week',
-    summary:
-      'You have a licence but have not driven in years. A short, judgement-free reset covering city traffic, parking and highway confidence.',
-    highlights: ['Judgement-free pace', 'Parking refresh', 'Highway re-entry'],
-    featured: false,
+    id: 'fancy-number',
+    imageId: 'service-fancy-number',
+    title: 'Fancy Number Allocation',
+    note: 'Reserve your choice of number',
+    href: '#contact',
   },
 ]
 
@@ -322,18 +290,6 @@ export const safetyTopics = [
   },
 ]
 
-/* --- Progress journey --------------------------------------------------- */
-export const journey = [
-  { km: '0', title: 'First Lesson', body: 'Engine off. Seat, mirrors and controls, in an empty ground.' },
-  { km: '1', title: 'Basic Control', body: 'Moving off, stopping smoothly and steering in a straight line.' },
-  { km: '2', title: 'Quiet Roads', body: 'Low-traffic colony roads, gentle turns and first gear changes.' },
-  { km: '3', title: 'City Traffic', body: 'Junctions, signals, two-wheelers and lane discipline.' },
-  { km: '4', title: 'Parking', body: 'Parallel, bay and reverse parking with real reference points.' },
-  { km: '5', title: 'Real-World Driving', body: 'Peak-hour routes, flyovers, night driving and highway merging.' },
-  { km: '6', title: 'Test Preparation', body: 'H-track, 8-track, hill start and two full mock tests.' },
-  { km: '7', title: 'Confident Driver', body: 'A full solo-style drive, start to finish, with the instructor silent.' },
-]
-
 /* --- Reviews ------------------------------------------------------------ */
 export const reviews = [
   {
@@ -451,7 +407,6 @@ export const faqs = [
 
 /* --- Booking form options ----------------------------------------------- */
 export const formOptions = {
-  courses: courses.map((c) => c.name).concat(['Not sure yet — please advise']),
   transmission: ['Manual', 'Automatic', 'Not sure yet'],
   areas: serviceAreas.map((a) => a.name),
   times: [

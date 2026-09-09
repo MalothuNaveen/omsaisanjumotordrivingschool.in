@@ -1,6 +1,6 @@
 import Icon from './ui/Icon'
 import ImageSlot from './ui/ImageSlot'
-import { hero, whatsappUrl } from '../data/site'
+import { hero } from '../data/site'
 
 export default function Hero() {
   return (
@@ -16,22 +16,6 @@ export default function Hero() {
           </h1>
 
           <p className="hero__lede">{hero.subhead}</p>
-
-          <div className="hero__actions">
-            <a className="btn btn--lg" href="#contact">
-              Book Now
-              <Icon name="arrowRight" size={18} />
-            </a>
-            <a
-              className="btn btn--lg btn--ghost"
-              href={whatsappUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Icon name="whatsapp" size={18} />
-              WhatsApp Us
-            </a>
-          </div>
 
           <ul className="hero__trust">
             {hero.trustPoints.map((point) => (
@@ -50,13 +34,6 @@ export default function Hero() {
             priority
             sizes="(min-width: 980px) 46vw, 92vw"
           />
-          <div className="hero__badge">
-            <Icon name="shieldUser" size={26} />
-            <div>
-              <strong>Dual-control cars</strong>
-              <span>Instructor brake and clutch on every lesson</span>
-            </div>
-          </div>
         </div>
       </div>
     </section>

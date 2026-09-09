@@ -6,7 +6,6 @@ const EMPTY = {
   name: '',
   phone: '',
   email: '',
-  course: '',
   transmission: '',
   area: '',
   date: '',
@@ -19,7 +18,6 @@ const LABELS = {
   name: 'Full name',
   phone: 'Phone number',
   email: 'Email address',
-  course: 'Preferred course',
   transmission: 'Manual or automatic',
   area: 'Preferred area',
   date: 'Preferred start date',
@@ -42,7 +40,6 @@ function validate(values) {
   if (values.email.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(values.email.trim()))
     errors.email = 'That email address does not look right.'
 
-  if (!values.course) errors.course = 'Choose a course, or select “Not sure yet”.'
   if (!values.transmission) errors.transmission = 'Choose manual, automatic or not sure.'
   if (!values.area) errors.area = 'Choose the area you would like to train in.'
 
@@ -72,7 +69,6 @@ function bookingWhatsAppUrl(values) {
     `Name: ${values.name.trim()}`,
     `Phone: ${values.phone.trim()}`,
     values.email.trim() ? `Email: ${values.email.trim()}` : null,
-    `Course: ${values.course}`,
     `Transmission: ${values.transmission}`,
     `Area: ${values.area}`,
     `Preferred start date: ${formatDate(values.date)}`,
@@ -165,7 +161,6 @@ export default function BookingForm() {
   if (submitted) {
     const recap = [
       ['Name', submitted.name],
-      ['Course', submitted.course],
       ['Transmission', submitted.transmission],
       ['Area', submitted.area],
       ['Start date', formatDate(submitted.date)],
@@ -292,25 +287,6 @@ export default function BookingForm() {
             aria-invalid={errors.email ? 'true' : undefined}
             aria-describedby={describedBy('email')}
           />
-        </Field>
-
-        <Field id="course" label={LABELS.course} error={errors.course} required>
-          <select
-            className="select"
-            id="course"
-            name="course"
-            value={values.course}
-            onChange={update('course')}
-            aria-invalid={errors.course ? 'true' : undefined}
-            aria-describedby={describedBy('course')}
-          >
-            <option value="">Select a course</option>
-            {formOptions.courses.map((option) => (
-              <option key={option} value={option}>
-                {option}
-              </option>
-            ))}
-          </select>
         </Field>
 
         <Field id="transmission" label={LABELS.transmission} error={errors.transmission} required>

@@ -4,7 +4,20 @@
 
 /* --------------------------------------------------------------------------
    Buttons
-   -------------------------------------------------------------------------- */
+   --------------------/* --- Primary Button --------------------------------------------------- */
+.btn:not([class*='btn--outline']):not([class*='btn--ghost']):not([class*='btn--dark']) {
+  background: var(--accent);
+  color: var(--accent-ink);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+  transition: background var(--dur) var(--ease), transform var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
+}
+
+.btn:not([class*='btn--outline']):not([class*='btn--ghost']):not([class*='btn--dark']):hover,
+.btn:not([class*='btn--outline']):not([class*='btn--ghost']):not([class*='btn--dark']):focus-visible {
+  background: var(--accent-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(16, 185, 129, 0.4);
+}
 .btn {
   --btn-bg: var(--accent);
   --btn-fg: var(--accent-ink);
@@ -365,7 +378,7 @@
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(244, 241, 236, 0.86);
+  background: rgba(6, 28, 20, 0.88);
   backdrop-filter: blur(14px) saturate(140%);
   -webkit-backdrop-filter: blur(14px) saturate(140%);
   border-bottom: 1px solid transparent;
@@ -375,22 +388,39 @@
     box-shadow var(--dur) var(--ease);
 }
 .site-header.is-stuck {
-  border-bottom-color: var(--line);
-  background: rgba(244, 241, 236, 0.94);
-  box-shadow: 0 1px 20px -12px rgba(14, 22, 33, 0.5);
+  border-bottom-color: rgba(244, 241, 236, 0.1);
+  background: rgba(6, 28, 20, 0.95);
+  box-shadow: 0 4px 24px -12px rgba(6, 28, 20, 0.35);
+}
+.site-header .nav__link {
+  color: rgba(244, 241, 236, 0.68);
+}
+.site-header .nav__link:hover,
+.site-header .nav__link.is-active {
+  color: #fff;
+}
+.site-header .header-call {
+  color: #fff;
+}
+.site-header .nav-toggle {
+  color: #fff;
+  border-color: rgba(244, 241, 236, 0.3);
+}
+.site-header .nav-toggle:hover {
+  border-color: #fff;
 }
 
 .header-inner {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  min-height: 68px;
+  min-height: 84px;
   flex-wrap: nowrap;
 }
 @media (min-width: 480px) {
   .header-inner {
     gap: 1rem;
-    min-height: 80px;
+    min-height: 96px;
   }
 }
 @media (min-width: 1400px) {
@@ -407,29 +437,31 @@
   gap: 0.65rem;
   margin-right: auto;
   min-height: 48px;
+  flex-shrink: 0;
 }
 .logo__mark {
-  width: 48px;
-  height: 48px;
+  width: auto;
+  height: auto;
+  max-height: 72px;
+  max-width: 55vw;
   flex: none;
-  object-fit: contain;
 }
 @media (min-width: 480px) {
   .logo {
-    min-height: 60px;
+    min-height: 84px;
   }
   .logo__mark {
-    width: 60px;
-    height: 60px;
+    max-height: 84px;
+    max-width: 260px;
   }
 }
 @media (min-width: 1400px) {
   .logo {
-    min-height: 100px;
+    min-height: 118px;
   }
   .logo__mark {
-    width: 100px;
-    height: 100px;
+    max-height: 118px;
+    max-width: 360px;
   }
 }
 .logo__text {
@@ -680,57 +712,6 @@
 }
 .drawer__meta .icon {
   color: var(--accent);
-}
-
-/* --------------------------------------------------------------------------
-   Mobile sticky action bar
-   -------------------------------------------------------------------------- */
-.action-bar {
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 90;
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-  background: rgba(6, 35, 28, 0.92);
-  backdrop-filter: blur(14px) saturate(140%);
-  -webkit-backdrop-filter: blur(14px) saturate(140%);
-  border-top: 1px solid var(--ink-3);
-  box-shadow: 0 -8px 24px -12px rgba(0, 0, 0, 0.4);
-  padding-bottom: env(safe-area-inset-bottom, 0px);
-}
-@media (min-width: 900px) {
-  .action-bar {
-    display: none;
-  }
-}
-.action-bar__btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  min-height: 56px;
-  font-family: var(--font-display);
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: #f4f1ec;
-  background: transparent;
-  border: 0;
-  cursor: pointer;
-}
-.action-bar__btn + .action-bar__btn {
-  border-top: 1px solid var(--ink-3);
-}
-.action-bar__btn--primary {
-  background: var(--accent);
-  color: var(--accent-ink);
-}
-.action-bar__btn--wa .icon {
-  color: #3ddc84;
 }
 
 /* Desktop floating WhatsApp */
@@ -1041,3 +1022,68 @@
   color: #8b98a8;
   line-height: 1.6;
 }
+
+/* ==========================================================================
+   CARDS
+   ========================================================================== */
+
+.course {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: var(--gap);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--line);
+  transition: transform var(--dur) var(--ease), box-shadow var(--dur) var(--ease), border-color var(--dur) var(--ease);
+}
+
+.course:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--accent-soft);
+}
+
+/* ==========================================================================
+   WHATSAPP WIDGET
+   ========================================================================== */
+.whatsapp-widget {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 60px;
+  height: 60px;
+  background-color: #25d366;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-lg);
+  z-index: 100;
+  transition: transform var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
+}
+
+.whatsapp-widget:hover {
+  transform: scale(1.1);
+  box-shadow: 0 12px 24px rgba(37, 211, 102, 0.4);
+}
+
+.whatsapp-widget__pulse {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 50%;
+  background-color: #25d366;
+  animation: whatsappPulse 2s infinite;
+  z-index: -1;
+}
+
+@keyframes whatsappPulse {
+  0% { transform: scale(1); opacity: 0.8; }
+  100% { transform: scale(1.6); opacity: 0; }
+}
+

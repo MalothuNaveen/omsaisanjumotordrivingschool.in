@@ -189,6 +189,14 @@ const paths = {
       <path d="m3.6 17.4 4.6-4.4a2 2 0 0 1 2.7 0l3.4 3.2m0 0 1.8-1.7a2 2 0 0 1 2.7 0l1.7 1.6m-6.2.1 2.6 2.5" />
     </g>
   ),
+  idCard: (
+    <g {...stroke}>
+      <rect x="2.5" y="5" width="19" height="14" rx="2.4" />
+      <circle cx="8" cy="11" r="2.2" />
+      <path d="M5.3 15.6a2.9 2.9 0 0 1 5.4 0" />
+      <path d="M13.5 9.2h5M13.5 12h5M13.5 14.8h3" />
+    </g>
+  ),
 }
 
 export default function Icon({ name, size = 24, title, className = '', ...rest }) {
