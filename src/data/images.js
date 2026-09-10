@@ -29,12 +29,12 @@
 export const imageSlots = {
   /* ---- HERO IMAGE ------------------------------------------------------ */
   'hero-driving-lesson': {
-    src: 'images/sai-sanju-review-car.png',
+    src: 'images/sai-sanju-white-training-car-wide.webp',
     alt: 'Om Sai Sanju Motor Driving School training car with the school board mounted on top.',
-    ratio: '4 / 5',
+    ratio: '4 / 3',
     ratioMobile: '4 / 3',
-    position: 'center top',
-    size: '960 × 1280',
+    position: 'center center',
+    size: '1448 × 1086',
     brief: 'Hero. Real photo of the Sai Sanju training car.',
   },
 
@@ -68,51 +68,51 @@ export const imageSlots = {
 
   /* ---- TRAINING VEHICLE IMAGES ----------------------------------------- */
   'vehicle-manual': {
-    src: 'images/sai-sanju-white-training-car.png',
+    src: 'images/sai-sanju-white-training-car-wide.webp',
     alt: 'White Om Sai Sanju Motor Driving School training car with the school board mounted on top.',
-    ratio: '4 / 5',
+    ratio: '4 / 3',
     ratioMobile: '4 / 3',
-    position: 'center top',
-    size: '960 × 1280',
+    position: 'center center',
+    size: '1448 × 1086',
     brief: 'Cars training. Real white Sai Sanju training car with school board visible.',
   },
   'vehicle-automatic': {
-    src: 'images/sai-sanju-red-training-car.png',
+    src: 'images/sai-sanju-red-training-car-wide.webp',
     alt: 'Red Om Sai Sanju Motor Driving School training car with the school board mounted on top.',
-    ratio: '4 / 5',
+    ratio: '4 / 3',
     ratioMobile: '4 / 3',
-    position: 'center top',
-    size: '960 × 1280',
+    position: 'center center',
+    size: '1448 × 1086',
     brief: 'Cars training. Real red Sai Sanju training car with school board visible.',
   },
 
   /* ---- SAFETY IMAGE ---------------------------------------------------- */
   'safety-training': {
-    src: 'images/sai-sanju-white-training-car.png',
+    src: 'images/sai-sanju-white-training-car-wide.webp',
     alt: 'White Om Sai Sanju Motor Driving School training car with the school board mounted on top.',
-    ratio: '4 / 5',
+    ratio: '4 / 3',
     ratioMobile: '4 / 3',
-    position: 'center top',
-    size: '960 × 1280',
+    position: 'center center',
+    size: '1448 × 1086',
     brief: 'Safety training. Real photo of the Sai Sanju training car.',
   },
 
   'review-real-car': {
-    src: 'images/sai-sanju-review-car.png',
+    src: 'images/sai-sanju-white-training-car-wide.webp',
     alt: 'Om Sai Sanju Motor Driving School training car with the school board mounted on top.',
-    ratio: '4 / 5',
+    ratio: '4 / 3',
     ratioMobile: '4 / 3',
-    position: 'center top',
-    size: '960 × 1280',
+    position: 'center center',
+    size: '1448 × 1086',
     brief: 'Reviews. Real photo of the Sai Sanju training car used for learner pickup and lessons.',
   },
 
   /* ---- OUR SERVICES CARDS ------------------------------------------------ */
   'service-driving-classes': {
-    src: 'images/sai-sanju-red-training-car.png',
+    src: 'images/sai-sanju-red-training-car-wide.webp',
     alt: 'Red Om Sai Sanju Motor Driving School training car with the school board mounted on top.',
     ratio: '4 / 3',
-    position: 'center top',
+    position: 'center center',
     size: '960 × 1280',
     brief: 'Services card. 4-wheeler training.',
   },
@@ -133,7 +133,7 @@ export const imageSlots = {
     brief: 'Services card. Contact us / vehicle registration.',
   },
   'service-fancy-number': {
-    src: 'images/sai-sanju-white-training-car.png',
+    src: 'images/sai-sanju-white-training-car-wide.webp',
     alt: 'The Om Sai Sanju Motor Driving School training car and number plate.',
     ratio: '4 / 3',
     position: 'center center',

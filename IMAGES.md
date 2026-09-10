@@ -37,16 +37,16 @@ specific real photo as your library grows.
 
 | Slot id | Appears in | Real photo used |
 | --- | --- | --- |
-| `hero-driving-lesson` | Hero | Training car (`sai-sanju-review-car.png`) |
+| `hero-driving-lesson` | Hero | Training car (`sai-sanju-white-training-car-wide.webp`) |
 | `about-school` | About | School storefront (`office-front.jpeg`) |
 | `office-interior` | Locations | Office interior (`office-interior.jpeg`) |
 | `training-beginner` | Never Driven Before? | Office interior (`office-interior.jpeg`) |
-| `vehicle-manual` | Training Vehicles | White training car (`sai-sanju-white-training-car.png`) |
-| `vehicle-automatic` | Training Vehicles | Red training car (`sai-sanju-red-training-car.png`) |
-| `safety-training` | Drive Safely. Drive Responsibly. | White training car (`sai-sanju-white-training-car.png`) |
-| `review-real-car` | Learner Reviews | Training car (`sai-sanju-review-car.png`) |
-| `service-driving-classes` | Our Services — 4-Wheeler Training | Red training car (`sai-sanju-red-training-car.png`) |
+| `vehicle-manual` | Training Vehicles | White training car (`sai-sanju-white-training-car-wide.webp`) |
+| `vehicle-automatic` | Training Vehicles | Red training car (`sai-sanju-red-training-car-wide.webp`) |
+| `safety-training` | Drive Safely. Drive Responsibly. | White training car (`sai-sanju-white-training-car-wide.webp`) |
+| `review-real-car` | Learner Reviews | Training car (`sai-sanju-white-training-car-wide.webp`) |
+| `service-driving-classes` | Our Services — 4-Wheeler Training | Red training car (`sai-sanju-red-training-car-wide.webp`) |
 | `service-rta` | Our Services — Licences | School storefront (`office-front.jpeg`) |
 | `service-contact` | Our Services — Vehicle Registration | Office interior (`office-interior.jpeg`) |
-| `service-fancy-number` | Our Services — Fancy Number Allocation | White training car (`sai-sanju-white-training-car.png`) |
+| `service-fancy-number` | Our Services — Fancy Number Allocation | White training car (`sai-sanju-white-training-car-wide.webp`) |
 | `cta-final` | Ready to Get Behind the Wheel? | School storefront (`office-front.jpeg`) |

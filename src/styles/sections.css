@@ -313,6 +313,31 @@
   transform: translateX(3px);
 }
 
+/* Desktop: image on top, panel beneath — never covering the photograph. */
+@media (min-width: 900px) {
+  .service-card {
+    display: flex;
+    flex-direction: column;
+  }
+  .service-card__image,
+  .service-card__icon-bg {
+    flex: none;
+  }
+  /* Scrim only earns its place when text sits on the image. */
+  .service-card__image::after {
+    display: none;
+  }
+  .service-card__bar {
+    position: static;
+    flex: 1;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.6rem;
+    padding: 1rem 1.1rem 1.15rem;
+    border-radius: 0;
+  }
+}
+
 /* Mobile: one full-screen story panel per service instead of a small grid card. */
 @media (max-width: 899px) {
   .services__grid {
@@ -617,16 +642,27 @@
   flex-direction: column;
   transition:
     box-shadow var(--dur) var(--ease),
-    border-color var(--dur) var(--ease);
+    border-color var(--dur) var(--ease),
+    transform var(--dur) var(--ease);
 }
 .vehicle:hover {
   border-color: var(--line-strong);
   box-shadow: var(--shadow-md);
+  transform: translateY(-3px);
+}
+@media (prefers-reduced-motion: reduce) {
+  .vehicle:hover {
+    transform: none;
+  }
 }
 .vehicle .slot {
   border: 0;
   border-radius: 0;
   border-bottom: 1px solid var(--line);
+  /* Both card photos are 4:3 (1448x1086). Matching the box to the file means
+     object-fit: cover crops nothing at all — full composition, sign to
+     bumper. Pinned here so the two image areas stay identical. */
+  aspect-ratio: 4 / 3;
 }
 .vehicle__body {
   padding: clamp(1.4rem, 2.6vw, 2rem);
@@ -653,7 +689,7 @@
   line-height: 1.68;
 }
 .vehicle__specs {
-  margin-top: 1.4rem;
+  margin-top: 1.15rem;
   display: grid;
   grid-template-columns: 1fr;
   gap: 0.7rem 1rem;
@@ -677,6 +713,14 @@
   color: var(--accent);
   flex: none;
   margin-top: 1px;
+}
+.vehicle__specs {
+  margin-bottom: 1.5rem;
+}
+.vehicle__cta {
+  margin-top: auto;
+  padding-top: 0.85rem;
+  padding-bottom: 0.85rem;
 }
 
 /* --------------------------------------------------------------------------
@@ -874,6 +918,8 @@
 }
 .rating-card {
   display: flex;
+  width: fit-content;
+  max-width: 100%;
   align-items: center;
   gap: 1.25rem;
   padding: 1.25rem 1.6rem;

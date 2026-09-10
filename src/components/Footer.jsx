@@ -59,7 +59,7 @@ export default function Footer() {
             <h2 className="footer-heading" style={{ marginTop: '1.75rem' }}>
               Service areas
             </h2>
-            <ul className="footer-list">
+            <ul className="footer-list footer-list--areas">
               {serviceAreas.map((area) => (
                 <li key={area.name}>
                   <a href="#locations">{area.name}</a>

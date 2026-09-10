@@ -461,6 +461,14 @@
   }
   .logo__mark {
     max-height: 118px;
+    /* Capped: at 1400px the row also has to hold 8 nav links, the phone
+       number and Book Now. The wordmark grows again at 1660px, where the
+       1560px container finally has the room. */
+    max-width: 260px;
+  }
+}
+@media (min-width: 1660px) {
+  .logo__mark {
     max-width: 360px;
   }
 }
@@ -498,11 +506,30 @@
   display: none;
   flex: none;
 }
-@media (min-width: 1400px) {
+/*  The horizontal nav is shown only where the whole header row measurably
+    fits. Required content width is 1081px (logo 249 + nav 686 + actions 114
+    + gaps 32) against a 1140px container content box, so 1240px is the first
+    safe breakpoint. Below it the hamburger takes over. Previously this was
+    1400px with looser sizing, which needed 1523px of content in a 1305px
+    box — Book Now was pushed off the right edge at every width up to 1920. */
+@media (min-width: 1240px) {
   .nav {
     display: flex;
     align-items: center;
-    gap: 0.3rem;
+    gap: 0.18rem;
+  }
+}
+@media (min-width: 1660px) {
+  .nav {
+    gap: 0.25rem;
+  }
+  .nav__link {
+    padding: 0 0.85rem;
+    font-size: 1.05rem;
+  }
+  .nav__link::after {
+    left: 0.85rem;
+    right: 0.85rem;
   }
 }
 .nav__link {
@@ -510,8 +537,8 @@
   align-items: center;
   white-space: nowrap;
   min-height: 48px;
-  padding: 0 1rem;
-  font-size: 1.05rem;
+  padding: 0 0.7rem;
+  font-size: 0.97rem;
   font-weight: 600;
   color: var(--text-soft);
   border-radius: var(--radius-xs);
@@ -521,8 +548,8 @@
 .nav__link::after {
   content: '';
   position: absolute;
-  left: 1rem;
-  right: 1rem;
+  left: 0.7rem;
+  right: 0.7rem;
   bottom: 16px;
   height: 2px;
   background: var(--accent);
@@ -570,6 +597,8 @@
 .header-call .icon {
   color: var(--accent);
 }
+/*  The phone number is the widest single item in header-actions (~163px),
+    so it waits for the 1400px tier rather than the 1240px one. */
 @media (min-width: 1400px) {
   .header-call {
     display: inline-flex;
@@ -594,7 +623,7 @@
 .nav-toggle:hover {
   border-color: var(--ink);
 }
-@media (min-width: 1400px) {
+@media (min-width: 1240px) {
   .nav-toggle {
     display: none;
   }
@@ -654,6 +683,9 @@
 .drawer__close {
   width: var(--tap);
   height: var(--tap);
+  /* The logo beside it is flex-shrink:0, so without this the close button
+     was squeezed to a 14px-wide hit area on narrow phones. */
+  flex: none;
   display: grid;
   place-items: center;
   background: transparent;
@@ -983,6 +1015,17 @@
   overflow-wrap: anywhere;
   transition: color var(--dur) var(--ease);
 }
+/*  Service areas are seven single words, and every footer link carries a
+    44px touch target — as a single column that is 308px of near-empty space,
+    and it made the Quick links column 613px tall against 352px for its
+    neighbours, padding the whole footer row out to match. Two columns keeps
+    the touch targets and halves the height. */
+.footer-list--areas {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 0.75rem;
+}
+
 .footer-list a:hover {
   color: var(--accent);
 }
@@ -1087,3 +1130,93 @@
   100% { transform: scale(1.6); opacity: 0; }
 }
 
+/* ==========================================================================
+   MOBILE STICKY ACTION BAR
+   Call | WhatsApp | Book Now. Phones only (<768px), where the header has
+   collapsed to a hamburger and neither the phone number nor Book Now is
+   reachable without a tap. The floating WhatsApp widget is hidden at the
+   same breakpoint so the two never occupy the same corner.
+   ========================================================================== */
+.action-bar {
+  display: none;
+}
+
+@media (max-width: 767.98px) {
+  .action-bar {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 105; /* under the drawer (120) and its scrim (110) */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--line);
+    border-top: 1px solid var(--line);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    box-shadow: 0 -4px 18px rgba(6, 28, 20, 0.1);
+  }
+
+  .action-bar__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.45rem;
+    min-height: 52px; /* >= 44px touch target */
+    padding: 0.35rem 0.4rem;
+    min-width: 0;
+    background: var(--white);
+    color: var(--ink);
+    font-family: var(--font-display);
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: -0.005em;
+    white-space: nowrap;
+    text-decoration: none;
+  }
+
+  .action-bar__item span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .action-bar__item .icon {
+    flex: none;
+  }
+
+  .action-bar__item:active {
+    background: var(--paper-2);
+  }
+
+  .action-bar__item--wa {
+    color: #0d7038;
+  }
+
+  .action-bar__item--book {
+    background: var(--accent);
+    color: var(--accent-ink);
+  }
+
+  .action-bar__item--book:active {
+    background: var(--accent-dark);
+  }
+
+  /* Narrow phones (360px): drop the icon gap a touch so "WhatsApp" and
+     "Book Now" both stay on one line. */
+  @media (max-width: 380px) {
+    .action-bar__item {
+      gap: 0.3rem;
+      font-size: 0.76rem;
+    }
+  }
+
+  /* One bar is enough — the floating bubble would sit on top of it. */
+  .whatsapp-widget {
+    display: none;
+  }
+
+  /* Keep the last of the page clear of the fixed bar. */
+  body {
+    padding-bottom: calc(52px + env(safe-area-inset-bottom, 0px));
+  }
+}
