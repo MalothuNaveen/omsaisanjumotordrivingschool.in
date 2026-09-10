@@ -253,12 +253,6 @@
   transform: translateY(-4px);
   box-shadow: var(--shadow-lg);
 }
-.service-card__image::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(6, 35, 28, 0.55), transparent 55%);
-}
 .service-card__icon-bg {
   position: relative;
   aspect-ratio: 4 / 3;
@@ -323,10 +317,6 @@
   .service-card__icon-bg {
     flex: none;
   }
-  /* Scrim only earns its place when text sits on the image. */
-  .service-card__image::after {
-    display: none;
-  }
   .service-card__bar {
     position: static;
     flex: 1;
@@ -338,28 +328,34 @@
   }
 }
 
-/* Mobile: one full-screen story panel per service instead of a small grid card. */
+/*  Mobile: a full-bleed card per service — photo at its own 4:3 ratio with
+    the copy directly beneath it.
+
+    This used to be a 100svh "story panel" per card, which cost 3317px (about
+    four full screens) for four services, and forced a 4:3 photograph into a
+    390x844 portrait box. Under object-fit: cover that showed only 35% of the
+    picture's width — a heavy centre zoom that cropped away the edges of the
+    Sai Sanju board and both sides of the car. At 4:3 the box matches the
+    source exactly, so the whole photograph is visible with no crop.          */
 @media (max-width: 899px) {
   .services__grid {
     display: block;
     margin-inline: calc(-1 * var(--gutter));
   }
   .service-card {
-    display: flex;
-    align-items: flex-end;
-    min-height: 100vh;
-    min-height: 100svh;
+    display: block;
     border-radius: 0;
     box-shadow: none;
+    background: linear-gradient(135deg, var(--ink-2), var(--ink));
   }
   .service-card + .service-card {
     border-top: 1px solid rgba(244, 241, 236, 0.14);
   }
   .service-card__image,
   .service-card__icon-bg {
-    position: absolute;
-    inset: 0;
-    aspect-ratio: auto;
+    position: relative;
+    inset: auto;
+    aspect-ratio: 4 / 3;
   }
   .service-card__icon-bg .icon {
     width: 42vw;
@@ -405,17 +401,17 @@
     width: 100%;
     flex-direction: column;
     align-items: flex-start;
-    gap: 1.1rem;
+    gap: 0.9rem;
     border-radius: 0;
-    padding: 2rem 1.5rem calc(3rem + env(safe-area-inset-bottom, 0px));
-    background: linear-gradient(to top, rgba(6, 28, 20, 0.94), rgba(6, 28, 20, 0.55) 55%, transparent);
+    padding: 1.4rem 1.5rem 1.6rem;
+    background: transparent;
   }
   .service-card__title {
-    font-size: 1.9rem;
+    font-size: 1.35rem;
   }
   .service-card__note {
-    margin-top: 0.4rem;
-    font-size: 1rem;
+    margin-top: 0.35rem;
+    font-size: 0.95rem;
   }
   .service-card__cta {
     font-size: 0.85rem;
