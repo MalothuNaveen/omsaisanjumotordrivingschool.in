@@ -4,9 +4,9 @@ import { reviews, stats } from '../data/site'
 
 /* NOTE: demo testimonials — see the `reviews` array in src/data/site.js. */
 
-function Stars({ count = 5, className }) {
+function Stars({ count = 5, className, label }) {
   return (
-    <div className={className} role="img" aria-label={`${count} out of 5 stars`}>
+    <div className={className} role="img" aria-label={label ?? `${count} out of 5 stars`}>
       {Array.from({ length: count }, (_, i) => (
         <Icon key={i} name="star" size={15} />
       ))}
@@ -23,7 +23,11 @@ function initials(name) {
 }
 
 export default function Reviews() {
+  /*  Single source of truth: the learner rating lives in `stats` (site.js).
+   *  It used to be hardcoded as 4.9 here while stats and the JSON-LD both
+   *  said 4.5, so the page contradicted itself and its own structured data. */
   const rating = stats.find((s) => s.value.includes('/5'))
+  const score = rating ? rating.value.split('/')[0] : null
 
   return (
     <section className="section section--paper2" id="reviews" aria-labelledby="reviews-title">
@@ -36,15 +40,18 @@ export default function Reviews() {
                 What Our Learners Say
               </h2>
               <p className="section-lede">
-                Feedback collected from learners after they finished their course across our five
+                Feedback collected from learners after they finished their course across our
                 Hyderabad training areas.
               </p>
             </div>
 
             <div className="rating-card">
-              <p className="rating-card__score">4.9</p>
+              {score && <p className="rating-card__score">{score}</p>}
               <div>
-                <Stars className="rating-card__stars" />
+                <Stars
+                  className="rating-card__stars"
+                  label={score ? `${score} out of 5 stars` : undefined}
+                />
                 <p className="rating-card__meta">{rating ? rating.detail : '1,284 verified reviews'}</p>
               </div>
             </div>

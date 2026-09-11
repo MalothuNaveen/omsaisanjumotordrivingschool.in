@@ -30,7 +30,9 @@ export default function Vehicles() {
               />
               <div className="vehicle__body">
                 <p className="vehicle__type">{vehicle.type}</p>
-                <h3 className="vehicle__name">{vehicle.name}</h3>
+                <h3 className="vehicle__name" id={`vehicle-${vehicle.id}`}>
+                  {vehicle.name}
+                </h3>
                 <p className="vehicle__text">{vehicle.body}</p>
                 <ul className="vehicle__specs">
                   {vehicle.specs.map((spec) => (
@@ -40,6 +42,15 @@ export default function Vehicles() {
                     </li>
                   ))}
                 </ul>
+
+                <a
+                  className="btn btn--block vehicle__cta"
+                  href={vehicle.href}
+                  aria-describedby={`vehicle-${vehicle.id}`}
+                >
+                  {vehicle.cta}
+                  <Icon name="arrowRight" size={16} />
+                </a>
               </div>
             </article>
           ))}

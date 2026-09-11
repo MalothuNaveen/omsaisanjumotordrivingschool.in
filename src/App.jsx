@@ -18,6 +18,7 @@ import FinalCta from './components/FinalCta'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import WhatsAppWidget from './components/WhatsAppWidget'
+import MobileActionBar from './components/MobileActionBar'
 
 import useScrollReveal from './hooks/useScrollReveal'
 import useScrollSpy from './hooks/useScrollSpy'
@@ -38,6 +39,10 @@ export default function App() {
 
       <main id="main">
         <Hero />
+        {/* Proof sits directly under the hero: 9+ years, learner rating, RTO
+            licence. It was at position 13 (below the FAQ), where almost nobody
+            scrolled to it. */}
+        <TrustBar />
         <Services />
         <HowItWorks />
         <WhyChooseUs />
@@ -49,13 +54,13 @@ export default function App() {
         <Reviews />
         <Locations />
         <Faq />
-        <TrustBar />
         <FinalCta />
         <Contact />
       </main>
 
       <Footer />
       <WhatsAppWidget />
+      <MobileActionBar />
     </>
   )
 }

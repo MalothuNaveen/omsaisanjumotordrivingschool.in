@@ -54,11 +54,15 @@ export const mapsUrl =
   encodeURIComponent(business.nameFull + ', ' + contact.addressLines.join(', '))
 
 /* --- Navigation --------------------------------------------------------- */
+/*  Order MUST match the section order in App.jsx. useScrollSpy walks this
+ *  array and keeps the LAST id whose top has passed, so an array that is
+ *  out of DOM order makes the underline jump backwards as you scroll.     */
 export const navLinks = [
   { id: 'home', label: 'Home', href: '#home' },
-  { id: 'why-us', label: 'Why Choose Us', href: '#why-us' },
+  { id: 'services', label: 'Services', href: '#services' },
   { id: 'how-it-works', label: 'How It Works', href: '#how-it-works' },
-  { id: 'about', label: 'About', href: '#about' },
+  { id: 'why-us', label: 'Why Us', href: '#why-us' },
+  { id: 'vehicles', label: 'Our Cars', href: '#vehicles' },
   { id: 'reviews', label: 'Reviews', href: '#reviews' },
   { id: 'faq', label: 'FAQ', href: '#faq' },
   { id: 'contact', label: 'Contact', href: '#contact' },
@@ -225,29 +229,33 @@ export const skills = [
 export const vehicles = [
   {
     id: 'manual-car',
-    name: 'Cars Training',
+    name: 'Learn in Our Own Training Car',
     type: 'Sai Sanju training car',
     imageId: 'vehicle-manual',
-    body: 'Learn in our own branded training car with instructor guidance, pickup support and calm road practice from the first lesson.',
+    body: 'Build confidence in a branded Sai Sanju training car with instructor guidance and practical road training.',
     specs: [
       'Dual controls',
       'Instructor supervision',
-      'Serviced every 5,000 km',
+      'Pickup & drop support',
       'Beginner friendly',
     ],
+    cta: 'Book Car Training',
+    href: '#contact',
   },
   {
     id: 'automatic-car',
-    name: 'Cars Training',
+    name: 'Build Real-World Driving Confidence',
     type: 'Sai Sanju training car',
     imageId: 'vehicle-automatic',
-    body: 'Practise road confidence, steering control, parking and traffic judgement in a supervised Sai Sanju driving school car.',
+    body: 'Improve your steering, parking, traffic judgement and road confidence under the guidance of an experienced instructor.',
     specs: [
       'Dual controls',
-      'Instructor supervision',
-      'Pickup and drop support',
+      'Road & traffic practice',
+      'Pickup & drop support',
       'Beginner friendly',
     ],
+    cta: 'Book Car Training',
+    href: '#contact',
   },
 ]
 
