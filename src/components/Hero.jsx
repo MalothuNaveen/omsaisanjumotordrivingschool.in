@@ -1,6 +1,6 @@
 import Icon from './ui/Icon'
 import ImageSlot from './ui/ImageSlot'
-import { hero } from '../data/site'
+import { hero, contact } from '../data/site'
 
 export default function Hero() {
   return (
@@ -17,6 +17,10 @@ export default function Hero() {
 
           <p className="hero__lede">{hero.subhead}</p>
 
+          <div className="hero__actions">
+            <a className="btn" href="#contact">Book a lesson <Icon name="arrowRight" size={18} /></a>
+            <a className="btn btn--outline" href={contact.phoneHref}><Icon name="phone" size={18} />Call us</a>
+          </div>
           <ul className="hero__trust">
             {hero.trustPoints.map((point) => (
               <li key={point}>

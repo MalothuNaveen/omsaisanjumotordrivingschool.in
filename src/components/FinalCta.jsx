@@ -4,7 +4,7 @@ import { contact, whatsappUrl } from '../data/site'
 
 export default function FinalCta() {
   return (
-    <section className="section cta on-dark" aria-labelledby="cta-title">
+    <section className="section cta" aria-labelledby="cta-title">
       <div className="container cta__inner">
         <div data-reveal>
           <p className="eyebrow">Ready when you are</p>
@@ -21,7 +21,7 @@ export default function FinalCta() {
               <Icon name="arrowRight" size={18} />
             </a>
             <a
-              className="btn btn--lg btn--ghost"
+              className="btn btn--lg btn--outline"
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"

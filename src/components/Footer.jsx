@@ -1,6 +1,6 @@
 import Icon from './ui/Icon'
 import Logo from './ui/Logo'
-import { business, contact, footerLinks, mapsUrl, serviceAreas, services, stats, whatsappUrl } from '../data/site'
+import { business, contact, navLinks, mapsUrl, whatsappUrl } from '../data/site'
 
 const designerWhatsappUrl =
   'https://wa.me/919515538159?text=' +
@@ -10,62 +10,27 @@ const designerWhatsappUrl =
 
 export default function Footer() {
   const year = new Date().getFullYear()
-  const rating = stats.find((stat) => stat.value.includes('/5'))
 
   return (
-    <footer className="site-footer on-dark">
+    <footer className="site-footer">
       <div className="container">
         <div className="footer-grid">
           <div className="footer-brand">
             <Logo />
             <p>{business.description}</p>
-            <p style={{ marginTop: '0.75rem' }}>{business.tagline}</p>
-
-            <p className="footer-rating">
-              <i role="img" aria-label={rating ? `Rated ${rating.value} out of 5` : undefined}>
-                {Array.from({ length: 5 }, (_, index) => (
-                  <Icon key={index} name="star" size={14} />
-                ))}
-              </i>
-              {rating ? `${rating.value} · ${rating.detail}` : null}
-            </p>
-
-            <a className="btn btn--sm" href="#contact">
-              Book Now
-            </a>
           </div>
 
-          <div>
-            <h2 className="footer-heading">Services</h2>
-            <ul className="footer-list">
-              {services.map((service) => (
-                <li key={service.id}>
-                  <a href={service.href}>{service.title}</a>
-                </li>
-              ))}
-            </ul>
-          </div>
 
           <div>
             <h2 className="footer-heading">Quick links</h2>
             <ul className="footer-list">
-              {footerLinks.quick.map((link) => (
+              {navLinks.filter(link => link.id !== 'home').map((link) => (
                 <li key={link.href}>
                   <a href={link.href}>{link.label}</a>
                 </li>
               ))}
             </ul>
 
-            <h2 className="footer-heading" style={{ marginTop: '1.75rem' }}>
-              Service areas
-            </h2>
-            <ul className="footer-list footer-list--areas">
-              {serviceAreas.map((area) => (
-                <li key={area.name}>
-                  <a href="#locations">{area.name}</a>
-                </li>
-              ))}
-            </ul>
           </div>
 
           <div>
@@ -81,12 +46,6 @@ export default function Footer() {
                 <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
                   <Icon name="whatsapp" size={16} />
                   WhatsApp us
-                </a>
-              </li>
-              <li>
-                <a href={`mailto:${contact.email}`}>
-                  <Icon name="mail" size={16} />
-                  {contact.email}
                 </a>
               </li>
               <li>

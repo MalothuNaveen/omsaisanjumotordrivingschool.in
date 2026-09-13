@@ -3,7 +3,7 @@ import { safetyTopics } from '../data/site'
 
 export default function Safety() {
   return (
-    <section className="section section--dark on-dark" id="safety" aria-labelledby="safety-title">
+    <section className="section section--paper2" id="safety" aria-labelledby="safety-title">
       <div className="container">
         <div className="section-head" data-reveal>
           <p className="eyebrow">Safety training</p>

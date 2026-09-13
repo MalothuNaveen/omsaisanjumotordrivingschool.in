@@ -274,20 +274,6 @@ export default function BookingForm() {
           />
         </Field>
 
-        <Field id="email" label={LABELS.email} error={errors.email}>
-          <input
-            className="input"
-            id="email"
-            name="email"
-            type="email"
-            autoComplete="email"
-            placeholder="you@example.com"
-            value={values.email}
-            onChange={update('email')}
-            aria-invalid={errors.email ? 'true' : undefined}
-            aria-describedby={describedBy('email')}
-          />
-        </Field>
 
         <Field id="transmission" label={LABELS.transmission} error={errors.transmission} required>
           <select
@@ -341,6 +327,23 @@ export default function BookingForm() {
           />
         </Field>
 
+        <details className="booking__extras field--wide" open={errors.email ? true : undefined}>
+          <summary>Add preferences (optional)</summary>
+          <div className="booking__grid">
+        <Field id="email" label={LABELS.email} error={errors.email}>
+          <input
+            className="input"
+            id="email"
+            name="email"
+            type="email"
+            autoComplete="email"
+            placeholder="you@example.com"
+            value={values.email}
+            onChange={update('email')}
+            aria-invalid={errors.email ? 'true' : undefined}
+            aria-describedby={describedBy('email')}
+          />
+        </Field>
         <Field id="time" label={LABELS.time} error={errors.time}>
           <select
             className="select"
@@ -389,16 +392,18 @@ export default function BookingForm() {
             aria-describedby={describedBy('message')}
           />
         </Field>
+          </div>
+        </details>
       </div>
 
       <div className="booking__foot">
         <p className="booking__note">
           Fields marked * are required. We use your details only to arrange your lessons, and you
-          pay nothing until the slot is confirmed.
+          pay nothing until the slot is confirmed. Next, review and send your enquiry in WhatsApp.
         </p>
         <button type="submit" className="btn btn--lg">
-          Book Now
-          <Icon name="arrowRight" size={18} />
+          Continue to WhatsApp
+          <Icon name="whatsapp" size={18} />
         </button>
       </div>
     </form>

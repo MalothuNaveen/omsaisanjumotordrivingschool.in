@@ -44,7 +44,7 @@ export default function Services() {
                   <p className="service-card__note">{service.note}</p>
                 </div>
                 <span className="service-card__cta">
-                  Read More
+                  Enquire now
                   <Icon name="arrowRight" size={15} />
                 </span>
               </div>

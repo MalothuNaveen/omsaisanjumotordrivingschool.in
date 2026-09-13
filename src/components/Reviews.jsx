@@ -1,5 +1,4 @@
 import Icon from './ui/Icon'
-import ImageSlot from './ui/ImageSlot'
 import { reviews, stats } from '../data/site'
 
 /* NOTE: demo testimonials — see the `reviews` array in src/data/site.js. */
@@ -40,8 +39,7 @@ export default function Reviews() {
                 What Our Learners Say
               </h2>
               <p className="section-lede">
-                Feedback collected from learners after they finished their course across our
-                Hyderabad training areas.
+                What learners say about their driving lessons.
               </p>
             </div>
 
@@ -57,19 +55,10 @@ export default function Reviews() {
             </div>
           </div>
 
-          <div className="reviews__portrait" data-reveal data-reveal-delay="1">
-            {/* IMAGE SLOT: real review car — see src/data/images.js → 'review-real-car' */}
-            <ImageSlot id="review-real-car" className="slot--hover" sizes="(min-width: 900px) 30vw, 92vw">
-              <figcaption className="reviews__photo-badge">
-                <Icon name="car" size={17} />
-                Real training car
-              </figcaption>
-            </ImageSlot>
-          </div>
         </div>
 
         <div className="reviews__grid">
-          {reviews.map((review, index) => (
+          {reviews.slice(0, 3).map((review, index) => (
             <article className="review" key={review.id} data-reveal data-reveal-delay={index % 3}>
               <Icon name="quote" size={26} className="review__quote-mark" />
               <Stars count={review.rating} className="review__stars" />

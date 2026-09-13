@@ -6,9 +6,23 @@ import { contact, navLinks, whatsappUrl } from '../data/site'
 export default function Header({ activeId }) {
   const [open, setOpen] = useState(false)
   const [stuck, setStuck] = useState(false)
+  const headerRef = useRef(null)
   const drawerRef = useRef(null)
   const toggleRef = useRef(null)
   const closeRef = useRef(null)
+
+  /* Keep anchor destinations visible as the responsive logo changes height. */
+  useEffect(() => {
+    const root = document.documentElement
+    const updateHeight = () => root.style.setProperty('--site-header-height', `${headerRef.current.getBoundingClientRect().height}px`)
+    const observer = new ResizeObserver(updateHeight)
+    observer.observe(headerRef.current)
+    updateHeight()
+    return () => {
+      observer.disconnect()
+      root.style.removeProperty('--site-header-height')
+    }
+  }, [])
 
   /* Hairline + shadow appear only once the page has moved. */
   useEffect(() => {
@@ -68,7 +82,7 @@ export default function Header({ activeId }) {
 
   return (
     <>
-      <header className={`site-header${stuck ? ' is-stuck' : ''}`}>
+      <header ref={headerRef} className={`site-header${stuck ? ' is-stuck' : ''}`}>
         <div className="container header-inner">
           <Logo />
 
@@ -124,7 +138,7 @@ export default function Header({ activeId }) {
         {...(open ? {} : { inert: '', 'aria-hidden': 'true' })}
       >
         <div className="drawer__head">
-          <Logo onClick={closeDrawer} className="on-dark" />
+          <Logo onClick={closeDrawer} />
           <button
             ref={closeRef}
             type="button"
@@ -171,10 +185,6 @@ export default function Header({ activeId }) {
           <a href={contact.phoneHref}>
             <Icon name="phone" size={16} />
             {contact.phoneDisplay}
-          </a>
-          <a href={`mailto:${contact.email}`}>
-            <Icon name="mail" size={16} />
-            {contact.email}
           </a>
         </div>
       </div>

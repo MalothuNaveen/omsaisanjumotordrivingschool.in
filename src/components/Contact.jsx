@@ -1,6 +1,6 @@
 import BookingForm from './BookingForm'
 import Icon from './ui/Icon'
-import { contact, mapsUrl, whatsappUrl } from '../data/site'
+import { contact, mapsUrl, serviceAreas, whatsappUrl } from '../data/site'
 
 export default function Contact() {
   return (
@@ -9,11 +9,10 @@ export default function Contact() {
         <div className="section-head" data-reveal>
           <p className="eyebrow">Book now</p>
           <h2 className="section-title" id="contact-title">
-            Tell Us When You’d Like to Start
+            Book Your Driving Lessons
           </h2>
           <p className="section-lede">
-            Send the form and a course coordinator calls you within one working day to confirm your
-            instructor, your slot and the pickup point. Payment comes after that.
+            Share your details. We will call to confirm your lessons, timings and pickup point.
           </p>
         </div>
 
@@ -43,14 +42,6 @@ export default function Contact() {
               </p>
 
               <p className="contact-line">
-                <Icon name="mail" size={20} />
-                <a href={`mailto:${contact.email}`}>
-                  <b>{contact.email}</b>
-                  <span>For invoices and corporate bookings</span>
-                </a>
-              </p>
-
-              <p className="contact-line">
                 <Icon name="pin" size={20} />
                 <a href={mapsUrl} target="_blank" rel="noopener noreferrer">
                   <b>{contact.addressLines[1]}</b>
@@ -60,30 +51,11 @@ export default function Contact() {
             </div>
 
             <div className="contact-card">
-              <h3>What happens next</h3>
-              <ol className="next-steps">
-                <li>
-                  <span>
-                    <b>We call you back.</b> A coordinator confirms your area, your slot and which
-                    instructor is free — usually within one working day.
-                  </span>
-                </li>
-                <li>
-                  <span>
-                    <b>You confirm and pay.</b> Only once the slot is fixed. UPI, card, bank
-                    transfer or cash at the office.
-                  </span>
-                </li>
-                <li>
-                  <span>
-                    <b>Your first lesson.</b> We meet you at the pickup point with the training car
-                    and start with the basics.
-                  </span>
-                </li>
-              </ol>
+              <h3>Pickup areas</h3>
+              <p className="section-lede">{serviceAreas.map(area => area.name).join(' · ')}</p>
             </div>
 
-            <div className="contact-card contact-card--dark on-dark">
+            <div className="contact-card">
               <h3>Opening hours</h3>
               <dl className="hours">
                 {contact.hours.map((entry) => (

@@ -8,7 +8,7 @@ export default function Logo({ href = '#home', onClick, className = '' }) {
       onClick={onClick}
       aria-label={`${business.nameFull} — back to top`}
     >
-      <img className="logo__mark" src="/logo-wide.png" alt="" />
+      <img className="logo__mark" src="/images/logo-wide-tagline.png" width="2172" height="724" alt="Sai Sanju Motor Driving School — Time to Learn with the Best" />
     </a>
   )
 }

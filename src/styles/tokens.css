@@ -1,35 +1,35 @@
 /* ==========================================================================
    MILESTONE — DESIGN TOKENS
-   MyDrivingSchool-inspired green, white and mint system.
+   White and light-grey surfaces with navy text and blue accents.
    ========================================================================== */
 
 :root {
   /* --- Colour ---------------------------------------------------------- */
-  --ink: #061c14; /* primary dark teal-green */
-  --ink-2: #092e22; /* raised dark teal surface */
-  --ink-3: #124c3a; /* hairlines on dark */
-  --slate: #718980; /* secondary text on dark backgrounds */
+  --ink: #132342; /* primary navy */
+  --ink-2: #1d3557; /* secondary navy */
+  --ink-3: #304866; /* hairlines on dark */
+  --slate: #64748b; /* secondary text on dark backgrounds */
 
-  --paper: #f8fbf9; /* fresh white-mint page ground */
-  --paper-2: #eef8f3; /* recessed mint surface */
+  --paper: #ffffff; /* white page ground */
+  --paper-2: #f4f6f9; /* light-grey surface */
   --white: #ffffff;
   
   --glass-bg: rgba(255, 255, 255, 0.7);
   --glass-border: rgba(255, 255, 255, 0.4);
-  --glass-shadow: 0 8px 32px rgba(9, 46, 34, 0.05);
+  --glass-shadow: 0 8px 32px rgba(19, 35, 66, 0.05);
 
-  --text: #0b1a15; /* body text on light */
-  --text-soft: #4a6358; /* secondary text on light */
-  --text-faint: #738a80; /* labels, meta */
+  --text: #18243b; /* body text on light */
+  --text-soft: #4e5f7a; /* secondary text on light */
+  --text-faint: #596981; /* labels, meta */
 
-  --line: #e3ede7; /* borders on light */
-  --line-strong: #c2d8cd;
+  --line: #e1e6ed; /* borders on light */
+  --line-strong: #b9c4d3;
 
-  --accent: #10b981; /* primary emerald CTA */
-  --accent-dark: #059669;
-  --accent-soft: #d1fae5;
-  --accent-strong: #047857;
-  --accent-text: #059669;
+  --accent: #245ac5; /* primary blue CTA */
+  --accent-dark: #193e8b;
+  --accent-soft: #edf3ff;
+  --accent-strong: #193e8b;
+  --accent-text: #245ac5;
   --accent-ink: #ffffff;
 
   --gold: #fbbf24; /* star ratings only */
@@ -54,7 +54,7 @@
   --container: 1220px;
   --container-narrow: 880px;
   --gutter: clamp(1.15rem, 4vw, 2.5rem);
-  --section-y: clamp(4rem, 7.5vw, 7.25rem);
+  --section-y: clamp(2.5rem, 4.5vw, 4rem);
   --gap: clamp(1rem, 2.2vw, 1.75rem);
 
   /* --- Form ------------------------------------------------------------ */
@@ -63,24 +63,12 @@
   --radius-lg: 22px;
   --tap: 48px; /* minimum interactive target */
 
-  --shadow-sm: 0 1px 3px rgba(6, 28, 20, 0.05), 0 2px 10px rgba(6, 28, 20, 0.04);
-  --shadow-md: 0 4px 6px rgba(6, 28, 20, 0.05), 0 20px 40px -15px rgba(6, 28, 20, 0.15);
-  --shadow-lg: 0 10px 20px rgba(6, 28, 20, 0.06), 0 40px 80px -30px rgba(6, 28, 20, 0.2);
+  --shadow-sm: 0 1px 3px rgba(19, 35, 66, 0.05), 0 2px 10px rgba(19, 35, 66, 0.04);
+  --shadow-md: 0 4px 6px rgba(19, 35, 66, 0.05), 0 20px 40px -15px rgba(19, 35, 66, 0.15);
+  --shadow-lg: 0 10px 20px rgba(19, 35, 66, 0.06), 0 40px 80px -30px rgba(19, 35, 66, 0.2);
 
   --ease: cubic-bezier(0.2, 0.7, 0.3, 1);
   --dur: 260ms;
 
   color-scheme: light;
-}
-
-/* Dark surfaces re-point the text tokens so components stay context-free. */
-.on-dark {
-  --text: #f8fbf9;
-  --text-soft: #b2cfc4;
-  --text-faint: #89ae9f;
-  --line: rgba(248, 251, 249, 0.14);
-  --line-strong: rgba(248, 251, 249, 0.26);
-  --accent-text: #34d399;
-  --white: #11271e;
-  --paper: #061c14;
 }

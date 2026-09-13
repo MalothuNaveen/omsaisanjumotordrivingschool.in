@@ -30,7 +30,6 @@ export const contact = {
   whatsappNumber: '919000111516', // digits only, with country code
   whatsappMessage:
     'Hi Om Sai Sanju Motor Driving School, I would like to book a driving lesson. Could you share the available timings?',
-  email: 'contact@omsaisanjumotordrivingschool.in', // placeholder — update once a domain/mailbox is set up
   addressLines: [
     'Srinivasa Nagar Colony',
     'Temple Alwal, Alwal',
@@ -60,8 +59,6 @@ export const mapsUrl =
 export const navLinks = [
   { id: 'home', label: 'Home', href: '#home' },
   { id: 'services', label: 'Services', href: '#services' },
-  { id: 'how-it-works', label: 'How It Works', href: '#how-it-works' },
-  { id: 'why-us', label: 'Why Us', href: '#why-us' },
   { id: 'vehicles', label: 'Our Cars', href: '#vehicles' },
   { id: 'reviews', label: 'Reviews', href: '#reviews' },
   { id: 'faq', label: 'FAQ', href: '#faq' },
@@ -71,9 +68,9 @@ export const navLinks = [
 /* --- Hero --------------------------------------------------------------- */
 export const hero = {
   eyebrow: 'Driving Classes & RTO Services',
-  headline: ['Time to Learn', 'with the Best.'],
+  headline: ['Learn to drive.', 'With confidence.'],
   subhead:
-    'Professional driving lessons designed for beginners, busy professionals and anyone ready to become a confident, responsible driver.',
+    'Patient instructors, practical driving lessons and flexible timings in Alwal and Secunderabad. Start your journey with Sai Sanju.',
   trustPoints: ['Beginner Friendly', 'Manual & Automatic', 'Flexible Timings', 'Safety-Focused'],
 }
 

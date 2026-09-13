@@ -4,7 +4,7 @@ import { contact, mapsUrl, serviceAreas } from '../data/site'
 
 export default function Locations() {
   return (
-    <section className="section section--dark on-dark" id="locations" aria-labelledby="locations-title">
+    <section className="section section--paper2" id="locations" aria-labelledby="locations-title">
       <div className="container">
         <div className="section-head" data-reveal>
           <p className="eyebrow">Where we teach</p>
@@ -31,7 +31,7 @@ export default function Locations() {
                     <p className="area__name">{area.name}</p>
                     <p className="area__note">{area.note}</p>
                   </div>
-                  {area.pickup && <span className="chip chip--dark">Pickup</span>}
+                  {area.pickup && <span className="chip">Pickup</span>}
                 </li>
               ))}
             </ul>

@@ -11,13 +11,8 @@
 html {
   -webkit-text-size-adjust: 100%;
   scroll-behavior: smooth;
-  scroll-padding-top: 76px;
+  scroll-padding-top: calc(var(--site-header-height, 84px) + 12px);
   overflow-x: hidden;
-}
-@media (min-width: 1400px) {
-  html {
-    scroll-padding-top: 96px;
-  }
 }
 
 body {
@@ -89,9 +84,6 @@ textarea {
   outline-offset: 3px;
   border-radius: 2px;
 }
-.on-dark :focus-visible {
-  outline-color: #86efac;
-}
 
 /* --- Skip link --------------------------------------------------------- */
 .skip-link {
@@ -125,11 +117,6 @@ textarea {
 .section {
   padding-block: var(--section-y);
   position: relative;
-}
-
-.section--dark {
-  background: var(--ink);
-  color: #f4f1ec;
 }
 
 .section--paper2 {
